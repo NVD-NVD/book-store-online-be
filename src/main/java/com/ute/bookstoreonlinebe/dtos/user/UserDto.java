@@ -8,13 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by: IntelliJ IDEA
- * User      : NVD-NVD
- * Date      : 04/20/22
- * Time      : 12:20 AM
- * Filename  : UserDto
- */
 @Getter
 @Setter
 @NoArgsConstructor

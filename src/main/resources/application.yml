@@ -23,6 +23,7 @@ jwt:
 default:
   password: 12345678
   avatar: null
+  updatingInfoBook: "Đang cập nhập"
 google:
   verifyUrl: https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=
 logging:

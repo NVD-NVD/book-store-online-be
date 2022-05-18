@@ -1,4 +1,4 @@
-package com.ute.bookstoreonlinebe.services;
+package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
@@ -7,13 +7,6 @@ import com.ute.bookstoreonlinebe.models.User;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * Created by: IntelliJ IDEA
- * User      : NVD-NVD
- * Date      : 04/20/2022
- * Time      : 8:38 PM
- * Filename  : UserService
- */
 public interface UserService{
 
 //    Page<User> getUserPaging(String search, int page, int size, String sort, String column);

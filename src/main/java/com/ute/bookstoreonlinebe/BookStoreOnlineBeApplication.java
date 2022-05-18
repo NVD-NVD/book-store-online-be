@@ -1,8 +1,10 @@
 package com.ute.bookstoreonlinebe;
 
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
+import com.ute.bookstoreonlinebe.repositories.CategoryRepository;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
-import com.ute.bookstoreonlinebe.services.UserService;
+import com.ute.bookstoreonlinebe.services.category.CategoryService;
+import com.ute.bookstoreonlinebe.services.user.UserService;
 import com.ute.bookstoreonlinebe.utils.EnumGender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,10 +18,19 @@ import java.text.SimpleDateFormat;
 public class BookStoreOnlineBeApplication implements CommandLineRunner {
     @Autowired
     private UserService userService;
+
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
+
+    @Autowired
+    private CategoryService categoryService;
+
     @Value("${default.password}")
     private String defaultPassword;
+
     @Value("${default.password}")
     private String defaultAvatar;
 
@@ -36,6 +47,9 @@ public class BookStoreOnlineBeApplication implements CommandLineRunner {
                             EnumGender.Male, "thu duc, tp.HCM",
                     "0989542812", defaultAvatar);
             userService.createAdmin(userDto);
+        }
+        if(categoryRepository.count() == 0 ){
+            categoryService.createNewCategory("new");
         }
     }
 }

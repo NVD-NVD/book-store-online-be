@@ -9,13 +9,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-/**
- * Created by: IntelliJ IDE
- * User: NVD-NVD
- * Date: 04/20/2022
- * Time: 8:06 PM
- * Filename: UserAuthenticationToken
- */
 public class UserAuthenticationProvider implements AuthenticationProvider {
 
     private final JwtUserDetailsService jwtUserDetailsService;

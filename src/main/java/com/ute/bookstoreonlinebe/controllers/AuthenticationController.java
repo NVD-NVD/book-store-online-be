@@ -9,7 +9,7 @@ import com.ute.bookstoreonlinebe.exceptions.UserNotFoundAuthenticationException;
 import com.ute.bookstoreonlinebe.securities.JwtTokenUtils;
 import com.ute.bookstoreonlinebe.securities.JwtUserDetailsService;
 import com.ute.bookstoreonlinebe.securities.provider.UserAuthenticationToken;
-import com.ute.bookstoreonlinebe.services.UserService;
+import com.ute.bookstoreonlinebe.services.user.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,13 +27,6 @@ import javax.validation.Valid;
 import java.security.Principal;
 import java.util.HashMap;
 
-/**
- * Created by: IntelliJ IDEA
- * User      : NVD-NVD
- * Date      : 04/20/22
- * Time      : 8:54 PM
- * Filename  : AuthenticationController
- */
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthenticationController {

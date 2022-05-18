@@ -10,16 +10,20 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Getter @Setter
+@ToString
+@EqualsAndHashCode
 @Document(collection = "categories")
 @TypeAlias(value = "Category")
-public class Category implements Serializable
-{
+public class Category implements Serializable {
     @Id
     private String id;
 
     @NonNull private String name;
 
     @DBRef(lazy = true)
-    private List<Book> productsOfCategory = new ArrayList<>();
+    private List<Book> booksOfCategory = new ArrayList<>();
 }

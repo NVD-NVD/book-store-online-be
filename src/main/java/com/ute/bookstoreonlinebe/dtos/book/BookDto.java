@@ -1,12 +1,12 @@
-package com.ute.bookstoreonlinebe.models;
+package com.ute.bookstoreonlinebe.dtos.book;
 
-import com.ute.bookstoreonlinebe.models.embadded.EmbeddedDescription;
 import com.ute.bookstoreonlinebe.models.embadded.EmbeddedCategory;
+import com.ute.bookstoreonlinebe.models.embadded.EmbeddedDescription;
 import com.ute.bookstoreonlinebe.models.embadded.EmbeddedPublishers;
-import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,21 +17,14 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
-@Document(collection = "books")
-@TypeAlias("Product")
-public class Book {
-    @Id
-    private String id;
-
+public class BookDto {
     private String name;
 
     private String author;
 
     private List<EmbeddedPublishers> publishers = new ArrayList<>();
 
-    private List<EmbeddedDescription> description = new ArrayList<>();;
+    private List<EmbeddedDescription> description;
 
     private float price;
 
@@ -40,6 +33,4 @@ public class Book {
     private long quantity;
 
     private Set<EmbeddedCategory> fallIntoCategories = new HashSet<>();
-
-    private boolean enable = true;
 }

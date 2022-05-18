@@ -1,4 +1,4 @@
-package com.ute.bookstoreonlinebe.services;
+package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
@@ -18,13 +18,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by: IntelliJ IDE
- * User: NVD-NVD
- * Date: 04/20/2022
- * Time: 8:38 PM
- * Filename: UserService
- */
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {

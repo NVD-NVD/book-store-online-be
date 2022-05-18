@@ -9,13 +9,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * Created by: IntelliJ IDE
- * User: NVD-NVD
- * Date: 04/20/2022
- * Time: 7:05 PM
- * Filename: WebSecurityConfig
- */
 @Configuration
 @EnableSwagger2
 @Profile("dev")

@@ -15,13 +15,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Created by: IntelliJ IDE
- * User: NVD-NVD
- * Date: 04/20/2022
- * Time: 8:04 PM
- * Filename: JwtUserDetails
- */
 @Component
 public class JwtTokenUtils implements Serializable {
 
