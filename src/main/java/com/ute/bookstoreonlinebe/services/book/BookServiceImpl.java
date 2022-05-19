@@ -10,9 +10,12 @@ import com.ute.bookstoreonlinebe.models.embadded.EmbeddedPublishers;
 import com.ute.bookstoreonlinebe.repositories.BookRepository;
 import com.ute.bookstoreonlinebe.repositories.CategoryRepository;
 import com.ute.bookstoreonlinebe.utils.EnumLanguage;
+import com.ute.bookstoreonlinebe.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -39,7 +42,13 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public List<Book> getAllBook() {
-        return null;
+        return bookRepository.findAll();
+    }
+
+    @Override
+    public Page<Book> getBookPaging(String search, int page, int size, String sort, String column) {
+        Pageable pageable = PageUtils.createPageable(page, size, sort, column);
+        return bookRepository.getBookPaging(search, pageable);
     }
 
     @Override
@@ -53,6 +62,7 @@ public class BookServiceImpl implements BookService{
             throw new InvalidException("Tên sách không được bỏ trống");
         }
         Book book = new Book();
+
         book.setName(dto.getName());
         if (!ObjectUtils.isEmpty(dto.getAuthor())) {
             book.setAuthor(dto.getAuthor());

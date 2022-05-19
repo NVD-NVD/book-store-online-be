@@ -3,6 +3,7 @@ package com.ute.bookstoreonlinebe.services.user;
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
 import com.ute.bookstoreonlinebe.models.User;
+import org.springframework.data.domain.Page;
 
 import java.security.Principal;
 import java.util.List;
@@ -12,6 +13,8 @@ public interface UserService{
 //    Page<User> getUserPaging(String search, int page, int size, String sort, String column);
 
         User getUser(Principal principal);
+
+        Page<User> getUserPaging(String search, int page, int size, String sort, String column);
 
         User getUserCoreByEmail(String email);
 

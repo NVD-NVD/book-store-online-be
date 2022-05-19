@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class EmbeddedPublishers {
-    private String publishingCompanyName;
+    private String name;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date date;

@@ -24,8 +24,15 @@ default:
   password: 12345678
   avatar: null
   updatingInfoBook: "Đang cập nhập"
+
+paging:
+  default:
+    page: 0
+    size: 20
+
 google:
   verifyUrl: https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=
+
 logging:
   level:
     org.springframework.cache: error

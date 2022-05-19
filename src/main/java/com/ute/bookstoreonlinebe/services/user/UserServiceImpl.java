@@ -7,8 +7,11 @@ import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
 import com.ute.bookstoreonlinebe.utils.EnumRole;
+import com.ute.bookstoreonlinebe.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -34,6 +37,12 @@ public class UserServiceImpl implements UserService {
     public User getUser(Principal principal) {
         return userRepository.findByEmail(principal.getName())
                 .orElseThrow(() -> new NotFoundException(String.format("Account have email %s does not exist", principal.getName())));
+    }
+
+    @Override
+    public Page<User> getUserPaging(String search, int page, int size, String sort, String column) {
+        Pageable pageable = PageUtils.createPageable(page, size, sort, column);
+        return userRepository.getUserPaging(search, pageable);
     }
 
     @Override
