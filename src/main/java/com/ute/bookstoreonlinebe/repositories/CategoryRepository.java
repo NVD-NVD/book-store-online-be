@@ -8,9 +8,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CategoryRepository extends MongoRepository<Category, String> {
-    Category findByName(String categoryName);
+    Optional<Category> findByName(String categoryName);
+
     List<Category> findAll();
 
     @Query(value = "{'name' : { $regex: ?0, $options: 'i' } }"

@@ -25,7 +25,7 @@ public class CategoryController {
         return new ResponseEntity<>(categoryService.getAllCategory(), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "getCategoryPaging")
+    @ApiOperation(value = "Get Category Paging")
     @PostMapping("/getCateGoryPaging")
     public ResponseEntity<Page<Book>> getCategoryPaging(
             @RequestParam(name = "search", required = false, defaultValue = "") String search,
@@ -36,24 +36,47 @@ public class CategoryController {
         return new ResponseEntity<>(categoryService.getBookPaging(search, page, size, sort, column), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Create a new category")
+    @ApiOperation(value = "Create a new category (name)")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create/{name}")
     public ResponseEntity<Category> createNewCategory(@PathVariable String name){
         return new ResponseEntity<>(categoryService.createNewCategory(name), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Delete a category")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/delete/{id}")
+    public ResponseEntity<Category> deleteCategory(@PathVariable String id){
+        return new ResponseEntity<>(categoryService.deleteCategory(id), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Enable a category")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/enable/{id}")
+    public ResponseEntity<Category> enableCategory(@PathVariable String id){
+        return new ResponseEntity<>(categoryService.enableCategory(id), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Disable a category")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/disable/{id}")
+    public ResponseEntity<Category> disableCategory(@PathVariable String id){
+        return new ResponseEntity<>(categoryService.disableCategory(id), HttpStatus.OK);
+    }
+
     @ApiOperation(value = "Add book to category")
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/create/{cateId}/{bookId}")
-    public ResponseEntity<Category> addBookToCategory(@PathVariable String cateId){
+    @PostMapping("/addBook/{cateId}/{bookId}")
+    public ResponseEntity<Category> addBookToCategory(@PathVariable String cateId
+            , @PathVariable String bookId){
         return new ResponseEntity<>(categoryService.createNewCategory(cateId), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Create a new category")
+    @ApiOperation(value = "Remove book from category")
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/create")
-    public ResponseEntity<Category> deleteBookFromCategory(@PathVariable String name){
-        return new ResponseEntity<>(categoryService.createNewCategory(name), HttpStatus.OK);
+    @PostMapping("/removeBook/{cateId}/{BookId}")
+    public ResponseEntity<Category> removeBookFromCategory(@PathVariable String cateId, @PathVariable String...bookId){
+        return new ResponseEntity<>(categoryService.removeBookFromCategory(cateId, bookId), HttpStatus.OK);
     }
+
 }

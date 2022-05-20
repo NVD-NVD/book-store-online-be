@@ -25,6 +25,12 @@ public class BookController {
         return new ResponseEntity<>(bookService.createNewBook(dto), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Delete a book")
+    @PostMapping("/delete/{id}")
+    public ResponseEntity<Book> createNewBook(@PathVariable String id){
+        return new ResponseEntity<>(bookService.deleteBook(id), HttpStatus.OK);
+    }
+
     @ApiOperation(value = "Get all book")
     @GetMapping("/all")
     public ResponseEntity<List<Book>> getAllBook( ){

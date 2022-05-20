@@ -26,4 +26,6 @@ public class Category implements Serializable {
 
     @DBRef(lazy = true)
     private List<Book> booksOfCategory = new ArrayList<>();
+
+    private boolean enable = true;
 }
