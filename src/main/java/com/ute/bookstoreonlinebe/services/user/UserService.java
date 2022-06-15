@@ -2,37 +2,51 @@ package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
-import com.ute.bookstoreonlinebe.models.User;
+import com.ute.bookstoreonlinebe.entities.User;
 import org.springframework.data.domain.Page;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.util.List;
 
-public interface UserService{
+public interface UserService {
 
 //    Page<User> getUserPaging(String search, int page, int size, String sort, String column);
 
-        User getUser(Principal principal);
+    User getUser(Principal principal);
 
-        Page<User> getUserPaging(String search, int page, int size, String sort, String column);
+    Page<User> getUserPaging(String search, int page, int size, String sort, String column);
 
-        User getUserCoreByEmail(String email);
+    List<User> getAllUser();
 
-        User addNewUserCore(String firstName, String lastname,String email,String password);
+    User getUserByID(String id);
 
-        User createAdmin(UserDto dto);
+    User getUserCoreByEmail(String email);
 
-        User createNewUser(UserDto dto);
+    User getUserCoreByPhone(String phone);
 
-        User updateUser(String id,UserDto dto);
+    User addNewUserCore(String firstName, String lastname, String email, String password);
 
-        User changeStatus(String id,Principal principal);
+    User createAdmin(UserDto dto);
 
-        User changePassword(String id, PasswordDto passwordDto);
+    User createNewUser(UserDto dto);
 
-        List<String> getRoles();
+    User convertDto(UserDto dto);
 
-        User updateName(UserDto dto,Principal principal);
+    User updateUser(String id, Principal principal, UserDto dto);
 
-        List<User> getAllUser();
+    User changeStatus(String id, Principal principal);
+
+    User changePassword(String id, Principal principal, PasswordDto passwordDto);
+
+    User checkUserWithIDAndPrincipal(String id, Principal principal);
+
+    List<String> getRoles();
+
+    User updateName(UserDto dto, Principal principal);
+
+
+    User updateAvatar(String id, Principal principal, MultipartFile file);
+
+    User save(User user);
 }

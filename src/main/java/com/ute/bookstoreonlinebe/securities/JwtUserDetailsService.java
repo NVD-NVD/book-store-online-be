@@ -1,6 +1,6 @@
 package com.ute.bookstoreonlinebe.securities;
 
-import com.ute.bookstoreonlinebe.models.User;
+import com.ute.bookstoreonlinebe.entities.User;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

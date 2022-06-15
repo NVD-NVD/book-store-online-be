@@ -1,6 +1,6 @@
-package com.ute.bookstoreonlinebe.models.embadded;
+package com.ute.bookstoreonlinebe.entities.embedded;
 
-import com.ute.bookstoreonlinebe.utils.EnumCurrency;
+import com.ute.bookstoreonlinebe.utils.enums.EnumCurrency;
 import lombok.*;
 
 @NoArgsConstructor

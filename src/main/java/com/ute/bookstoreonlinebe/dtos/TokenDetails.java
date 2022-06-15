@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
@@ -12,7 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TokenDetails {
+
     private String token;
+
     private long expired;
+
     private List<String> roles;
+
+    @Value("${default.token_type}")
+    private String token_type;
 }

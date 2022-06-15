@@ -2,8 +2,8 @@ package com.ute.bookstoreonlinebe.services.category;
 
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
-import com.ute.bookstoreonlinebe.models.Book;
-import com.ute.bookstoreonlinebe.models.Category;
+import com.ute.bookstoreonlinebe.entities.Book;
+import com.ute.bookstoreonlinebe.entities.Category;
 import com.ute.bookstoreonlinebe.repositories.CategoryRepository;
 import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
@@ -33,29 +33,40 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
+    public Category getCategoryById(String id) {
+        return categoryRepository.findById(id).orElseThrow(
+                () -> new NotFoundException(String.format("Category có id %s không tồn tại", id)));
+    }
+
+    @Override
     public List<Category> getAllCategory() {
         return categoryRepository.findAll();
     }
 
     @Override
-    public Page<Book> getBookPaging(String search, int page, int size, String sort, String column) {
+    public Page<Category> getCategoryPaging(String search, int page, int size, String sort, String column) {
         Pageable pageable = PageUtils.createPageable(page, size, sort, column);
-        return categoryRepository.getBookPaging(search, pageable);
+        return categoryRepository.getCategoryPaging(search, pageable);
+    }
+
+    @Override
+    public Page<Book> getBookFromCategoryPaging(String id, int page, int size, String sort, String column) {
+        Pageable pageable = PageUtils.createPageable(page, size, sort, column);
+        return categoryRepository.getBookPaging(id, pageable);
     }
 
     @Override
     public Category createNewCategory(String name) {
         Category category = getCategoryByName(name);
         if(!ObjectUtils.isEmpty(category)){
-            throw new InvalidException(String.format("Category có name %s không tồn tại", name));
+            throw new InvalidException(String.format("Category có name %s đã tồn tại", name));
         }
         return categoryRepository.save(new Category(name));
     }
 
     @Override
     public Category deleteCategory(String id) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(String.format("Category có id %s không tồn tại", id)));
+        Category category = getCategoryById(id);
         categoryRepository.delete(category);
         return category;
     }
@@ -63,12 +74,9 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public Category createNewCategory(String name, String... bookId) {
         Category category = createNewCategory(name);
-        if(!ObjectUtils.isEmpty(category)){
-            throw new InvalidException(String.format("Category có name %s không tồn tại", name));
-        }
         List<Book> books = new ArrayList<>();
         for(String id : bookId){
-            Book book = bookService.getBook(id);
+            Book book = bookService.getBookById(id);
             if(!ObjectUtils.isEmpty(book)){
                 books.add(book);
             }
@@ -81,11 +89,10 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public Category addBookToCategory(String categoryId, String... bookID) {
-        Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new NotFoundException(String.format("Category có id %s không tồn tại", categoryId)));
+        Category category = getCategoryById(categoryId);
         List<Book> books = new ArrayList<>();
         for(String id : bookID){
-            Book book = bookService.getBook(id);
+            Book book = bookService.getBookById(id);
             if(!ObjectUtils.isEmpty(book)){
                 books.add(book);
             }
@@ -101,20 +108,17 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category enableCategory(String id) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(String.format("Category có id %s không tồn tại", id)));
-        category.setEnable(true);
-        categoryRepository.save(category);
-        return category;
+    public Category changeStatusCategory(String id) {
+        Category category = getCategoryById(id);
+        category.setEnable(!category.isEnable());
+        return categoryRepository.save(category);
     }
 
     @Override
-    public Category disableCategory(String id) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(String.format("Category có id %s không tồn tại", id)));
-        category.setEnable(false);
-        categoryRepository.save(category);
-        return category;
+    public Category updateCategory(Category category) {
+        Category cg = getCategoryById(category.getId());
+        cg.setBooksOfCategory(category.getBooksOfCategory());
+        categoryRepository.save(cg);
+        return null;
     }
 }

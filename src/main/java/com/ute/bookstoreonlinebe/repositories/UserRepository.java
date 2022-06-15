@@ -1,6 +1,6 @@
 package com.ute.bookstoreonlinebe.repositories;
 
-import com.ute.bookstoreonlinebe.models.User;
+import com.ute.bookstoreonlinebe.entities.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -19,4 +19,7 @@ public interface UserRepository extends MongoRepository<User, String> {
     Optional<User> findByEmail(String email);
 
     Optional<User> findByIdAndEnableTrue(String id);
+
+    @Query(value = "{'phone': ?0}")
+    Optional<User> getUserCoreByPhone(String phone);
 }

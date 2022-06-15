@@ -1,6 +1,5 @@
-package com.ute.bookstoreonlinebe.models.embadded;
+package com.ute.bookstoreonlinebe.entities.embedded;
 
-import com.ute.bookstoreonlinebe.utils.EnumLanguage;
 import lombok.*;
 
 @NoArgsConstructor

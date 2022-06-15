@@ -1,4 +1,4 @@
-package com.ute.bookstoreonlinebe.models;
+package com.ute.bookstoreonlinebe.entities;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

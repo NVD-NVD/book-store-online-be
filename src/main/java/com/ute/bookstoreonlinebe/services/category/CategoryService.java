@@ -1,7 +1,7 @@
 package com.ute.bookstoreonlinebe.services.category;
 
-import com.ute.bookstoreonlinebe.models.Book;
-import com.ute.bookstoreonlinebe.models.Category;
+import com.ute.bookstoreonlinebe.entities.Book;
+import com.ute.bookstoreonlinebe.entities.Category;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -9,9 +9,13 @@ import java.util.List;
 public interface CategoryService {
     Category getCategoryByName(String name);
 
+    Category getCategoryById(String id);
+
     List<Category> getAllCategory();
 
-    Page<Book> getBookPaging(String search, int page, int size, String sort, String column);
+    Page<Category> getCategoryPaging(String search, int page, int size, String sort, String column);
+
+    Page<Book> getBookFromCategoryPaging(String search, int page, int size, String sort, String column);
 
     Category createNewCategory(String name);
 
@@ -23,7 +27,8 @@ public interface CategoryService {
 
     Category removeBookFromCategory(String categoryId, String...bookID);
 
-    Category enableCategory(String id);
+    Category changeStatusCategory(String id);
 
-    Category disableCategory(String id);
+
+    Category updateCategory(Category category);
 }

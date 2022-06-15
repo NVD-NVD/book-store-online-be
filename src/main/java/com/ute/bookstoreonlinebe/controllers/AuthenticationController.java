@@ -3,7 +3,7 @@ package com.ute.bookstoreonlinebe.controllers;
 import com.ute.bookstoreonlinebe.dtos.AccountDto;
 import com.ute.bookstoreonlinebe.dtos.TokenDetails;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
-import com.ute.bookstoreonlinebe.models.User;
+import com.ute.bookstoreonlinebe.entities.User;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.UserNotFoundAuthenticationException;
 import com.ute.bookstoreonlinebe.securities.JwtTokenUtils;
@@ -28,7 +28,7 @@ import java.security.Principal;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/rest/auth")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;

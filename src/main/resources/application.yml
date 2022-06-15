@@ -3,9 +3,13 @@ spring:
     name: book-store-online-be
   data:
     mongodb:
-      host: localhost
-      port: 27017
+      uri: mongodb+srv://mongo-user:O2O0ONnVKME6Ndp4@cluster0.ipjdu.mongodb.net/?retryWrites=true&w=majority
+#      uri: mongodb+srv://zerodev:Dt542812!@cluster0.ipjdu.mongodb.net/?retryWrites=true&w=majority
+#      host: localhost
+#      port: 27017
       database: book-store-database
+      #O2O0ONnVKME6Ndp4
+
   profiles:
     active: ${ACTIVE_PROFILE:dev}
   servlet:
@@ -16,19 +20,25 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  main:
+    allow-circular-references: true
 
 jwt:
   secret: tlcnwithtothimynhan
 
 default:
   password: 12345678
-  avatar: null
+  token_type: "Bear"
+  avatar: "avatar/avatar_default.png"
   updatingInfoBook: "Đang cập nhập"
 
 paging:
   default:
     page: 0
     size: 20
+
+upload:
+  part: "/uploads/"
 
 google:
   verifyUrl: https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=

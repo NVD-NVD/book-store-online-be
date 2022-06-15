@@ -1,9 +1,9 @@
 package com.ute.bookstoreonlinebe.services.book;
 
 import com.ute.bookstoreonlinebe.dtos.book.BookDto;
-import com.ute.bookstoreonlinebe.models.Book;
+import com.ute.bookstoreonlinebe.entities.Book;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -18,13 +18,17 @@ public interface BookService {
 
     List<Book> getAllBookFromCategory(String name);
 
-    Book createNewBook(BookDto dto);
+    Book convertDtoToBook(BookDto dto);
 
-    Book updateBook(BookDto dto);
+    Book createNewBook(BookDto dto, MultipartFile files);
 
-    Book deleteBook(String id);
+    Book updateBook(String id, BookDto dto, MultipartFile files);
 
-    Book addBookToCategory(String bookId, String cateId);
+    Book changeStatusBook(String id);
 
+    Book addCategoryToBook(String bookId, String cateId);
 
+    Book removeCategoryFromBook(String bookId, String cateId);
+
+    List<Book> searchBook(String search);
 }

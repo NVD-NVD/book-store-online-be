@@ -1,7 +1,8 @@
-package com.ute.bookstoreonlinebe.models;
+package com.ute.bookstoreonlinebe.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.ute.bookstoreonlinebe.utils.EnumGender;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCart;
+import com.ute.bookstoreonlinebe.utils.enums.EnumGender;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -42,6 +43,8 @@ public class User {
     private String avatar;
 
     private List<String> roles = new ArrayList<>();
+
+    private EmbeddedCart carts;
 
     private boolean enable = true;
 }
