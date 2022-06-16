@@ -33,7 +33,7 @@ public class Book {
 
     private String author;
 
-    private List<EmbeddedPublishers> publishers = new ArrayList<>();
+    private EmbeddedPublishers publishers;
 
     private List<EmbeddedDescription> description = new ArrayList<>();;
 

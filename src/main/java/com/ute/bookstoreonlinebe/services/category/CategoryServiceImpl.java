@@ -29,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public Category getCategoryByName(String name) {
-        return categoryRepository.findByName(name).orElse(null);
+        return categoryRepository.findCategoryByName(name).orElse(null);
     }
 
     @Override
@@ -120,5 +120,10 @@ public class CategoryServiceImpl implements CategoryService{
         cg.setBooksOfCategory(category.getBooksOfCategory());
         categoryRepository.save(cg);
         return null;
+    }
+
+    @Override
+    public Category save(Category category) {
+        return categoryRepository.save(category);
     }
 }

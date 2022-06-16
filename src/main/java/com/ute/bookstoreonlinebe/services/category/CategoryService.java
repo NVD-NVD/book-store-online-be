@@ -29,6 +29,7 @@ public interface CategoryService {
 
     Category changeStatusCategory(String id);
 
-
     Category updateCategory(Category category);
+
+    Category save(Category category);
 }

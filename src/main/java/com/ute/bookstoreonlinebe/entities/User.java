@@ -5,6 +5,7 @@ import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCart;
 import com.ute.bookstoreonlinebe.utils.enums.EnumGender;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,6 +23,7 @@ public class User {
     @Id
     private String id;
 
+    @Indexed(unique = true)
     private String email;
 
     @JsonIgnore
@@ -38,6 +40,7 @@ public class User {
 
     private String address;
 
+    @Indexed(unique = true)
     private String phone;
 
     private String avatar;

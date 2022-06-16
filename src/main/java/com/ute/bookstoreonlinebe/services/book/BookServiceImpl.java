@@ -84,9 +84,9 @@ public class BookServiceImpl implements BookService {
         if (!ObjectUtils.isEmpty(dto.getPublishers())) {
             book.setPublishers(dto.getPublishers());
         } else {
-            book.setPublishers(Collections.singletonList(new EmbeddedPublishers(
+            book.setPublishers(new EmbeddedPublishers(
                     defaultInfo, new Date()
-            )));
+            ));
         }
         if (!ObjectUtils.isEmpty(dto.getImage_URLs())) {
             book.setImage_URLs(dto.getImage_URLs());
@@ -111,7 +111,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book createNewBook(BookDto dto, MultipartFile files) {
         Book book = convertDtoToBook(dto);
-        if (!files.isEmpty() || files != null)
+        if (files != null)
         {
 
         }
@@ -121,7 +121,11 @@ public class BookServiceImpl implements BookService {
                 (e) -> {
                     Category category = new Category();
                     if (e.getId().isEmpty()) {
-                        category = categoryService.createNewCategory(e.getName());
+                        if (categoryService.getCategoryByName(e.getName()) == null) {
+                            category = categoryService.save(new Category(null,e.getName(),null,true));
+                        }else {
+                            category = categoryService.getCategoryByName(e.getName());
+                        }
                         e.setId(category.getId());
                     }
                     category = categoryService.getCategoryById(e.getId());
