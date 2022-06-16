@@ -34,7 +34,7 @@ public class BookController {
     }
 
     @ApiOperation(value = "Get danh sách book có phân trang (bao gồm tìm kiếm sách)")
-    @GetMapping("/paging")
+    @PostMapping("/paging")
     public ResponseEntity<Page<Book>> getBookPaging(
             @RequestParam(name = "search", required = false, defaultValue = "") String search,
             @RequestParam(name = "page", required = false, defaultValue = "${paging.default.page}") int page,

@@ -8,8 +8,10 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -25,6 +27,9 @@ public class Book {
     private String id;
 
     private String name;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date birthday;
 
     private String author;
 
