@@ -249,4 +249,9 @@ public class BookServiceImpl implements BookService {
         book.setImage_URLs(images);
         return bookRepository.save(book);
     }
+
+    @Override
+    public Book save(Book book) {
+        return bookRepository.save(book);
+    }
 }

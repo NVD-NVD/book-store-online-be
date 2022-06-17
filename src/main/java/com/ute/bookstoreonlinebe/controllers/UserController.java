@@ -26,7 +26,6 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("/rest/user")
-@CrossOrigin("http://localhost:8080")
 public class UserController {
     @Autowired
     private UserService userService;

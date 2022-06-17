@@ -35,4 +35,6 @@ public interface BookService {
     Book addImageBook(String id, MultipartFile files);
 
     Book deleteImageBook(String id, String name);
+
+    Book save(Book book);
 }

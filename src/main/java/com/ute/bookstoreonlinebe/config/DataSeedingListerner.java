@@ -1,7 +1,11 @@
 package com.ute.bookstoreonlinebe.config;
 
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
+import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.User;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCardListBook;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCart;
+import com.ute.bookstoreonlinebe.repositories.BookRepository;
 import com.ute.bookstoreonlinebe.repositories.CategoryRepository;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
 import com.ute.bookstoreonlinebe.services.category.CategoryService;
@@ -17,12 +21,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 @Component
 @Profile("dev")
 public class DataSeedingListerner implements CommandLineRunner {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private BookRepository bookRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -41,5 +49,29 @@ public class DataSeedingListerner implements CommandLineRunner {
             userService.createAdmin(userDto);
 
         }
+//        try{
+//            List<User> users = userRepository.findAll();
+//            List<Book> books = bookRepository.findAll();
+//            users.forEach(user -> {
+//                EmbeddedCart embeddedCart = new EmbeddedCart();
+//                List<EmbeddedCardListBook> list = new ArrayList<>();
+//                EmbeddedCardListBook embeddedCardListBook = new EmbeddedCardListBook();
+//                Random random = new Random();
+//                for (int i = 0; i<5; i++) {
+//                    int randomIndex = random.nextInt(books.size());
+//                    Book book = books.get(randomIndex);
+//                    embeddedCardListBook.setBook(book);
+//                    embeddedCardListBook.setQuantity(randomIndex);
+//                    embeddedCardListBook.setTotal(book.getPrice().getPrice()*randomIndex);
+//                    list.add(embeddedCardListBook);
+//                }
+//                embeddedCart.setListBookInCart(list);
+//                user.setCarts(embeddedCart);
+//                userRepository.save(user);
+//            });
+//        }catch (Exception e){
+//            System.out.println(e);
+//        }
+
     }
 }

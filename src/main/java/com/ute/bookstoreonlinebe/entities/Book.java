@@ -43,6 +43,10 @@ public class Book {
 
     private long quantity;
 
+    private long sold;
+
+    private long bookLockNumber;
+
     private int discount;
 
     private List<EmbeddedCategory> fallIntoCategories = new ArrayList<>();

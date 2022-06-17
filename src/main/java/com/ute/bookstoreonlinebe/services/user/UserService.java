@@ -1,6 +1,7 @@
 package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
+import com.ute.bookstoreonlinebe.dtos.book.BookInCart;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
 import com.ute.bookstoreonlinebe.entities.User;
 import org.springframework.data.domain.Page;
@@ -49,4 +50,8 @@ public interface UserService {
     User updateAvatar(String id, Principal principal, MultipartFile file);
 
     User save(User user);
+
+    User addBookToCart(String userID, Principal principal, BookInCart bookInCart);
+
+    User deleteBookInCart(String userID, Principal principal, String bookID);
 }

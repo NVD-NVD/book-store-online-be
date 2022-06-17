@@ -11,8 +11,5 @@ import java.util.List;
 @Getter
 @Setter
 public class EmbeddedCart {
-    @Id
-    private String id;
-
     private List<EmbeddedCardListBook> listBookInCart = new ArrayList<>();
 }

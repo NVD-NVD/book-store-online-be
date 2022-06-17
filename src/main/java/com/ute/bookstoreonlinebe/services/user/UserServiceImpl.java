@@ -1,11 +1,16 @@
 package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
+import com.ute.bookstoreonlinebe.dtos.book.BookInCart;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
+import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.User;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCardListBook;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCart;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
+import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.services.file.FilesStorageService;
 import com.ute.bookstoreonlinebe.utils.enums.EnumRole;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
@@ -22,10 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.nio.file.Files;
 import java.security.Principal;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -35,6 +37,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private FilesStorageService storageService;
+
+    @Autowired
+    private BookService bookService;
 
     @Value("${default.password}")
     private String defaultPassword;
@@ -255,5 +260,49 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    @Override
+    public User addBookToCart(String userID, Principal principal, BookInCart bookInCart) {
+        User user = checkUserWithIDAndPrincipal(userID, principal);
+        EmbeddedCart embeddedCart = user.getCarts();
+        List<EmbeddedCardListBook> embeddedCardListBook = embeddedCart.getListBookInCart();
+        Book book = bookService.getBookById(bookInCart.getBookID());
+        if (book.getQuantity() < bookInCart.getQuantity()){
+            throw  new InvalidException(String.format("Số lượng sách có id %s không đủ.", bookInCart.getBookID()));
+        }
+        EmbeddedCardListBook cardListBook = new EmbeddedCardListBook();
+        cardListBook.setBook(book);
+        cardListBook.setQuantity(bookInCart.getQuantity());
+        cardListBook.setTotal(book.getPrice().getPrice()*bookInCart.getQuantity());
+        embeddedCardListBook.add(cardListBook);
+        embeddedCart.setListBookInCart(embeddedCardListBook);
+        user.setCarts(embeddedCart);
+        book.setBookLockNumber(book.getBookLockNumber() + bookInCart.getQuantity());
+        bookService.save(book);
+
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User deleteBookInCart(String userID, Principal principal, String bookID) {
+        User user = checkUserWithIDAndPrincipal(userID,principal);
+        EmbeddedCart cart = user.getCarts();
+        List<EmbeddedCardListBook> books = cart.getListBookInCart();
+        Iterator<EmbeddedCardListBook> it = books.iterator();
+        while (it.hasNext()){
+            EmbeddedCardListBook embeddedCardListBook = it.next();
+            if (embeddedCardListBook.getBook().getId().equals(bookID)){
+                Book book = bookService.getBookById(bookID);
+                book.setBookLockNumber(book.getBookLockNumber() - embeddedCardListBook.getQuantity());
+                it.remove();
+                bookService.save(book);
+                cart.setListBookInCart(books);
+                user.setCarts(cart);
+                return userRepository.save(user);
+            }
+        }
+
+        return user;
     }
 }

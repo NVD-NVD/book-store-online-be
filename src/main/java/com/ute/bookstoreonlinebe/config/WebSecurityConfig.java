@@ -57,7 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/rest/category/**").permitAll()
                 .antMatchers("/rest/book/**").permitAll()
                 .antMatchers("/rest/user/**").permitAll()
-                .antMatchers("/rest/**").permitAll()
+                .antMatchers("/rest/cart/**").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 

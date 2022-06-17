@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Component
 public class JwtTokenUtils implements Serializable {
 
-    private static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+    private static final long JWT_TOKEN_VALIDITY = 7 * 24 * 60 * 60;
 
     @Value("${default.token_type}")
     private String token_type;

@@ -56,7 +56,7 @@ public class BookController {
     @PostMapping
     public ResponseEntity<Book> createNewBook(
             @RequestBody BookDto dto,
-            @RequestParam(value = "files", required = false, defaultValue = "") MultipartFile files) throws HttpMediaTypeException {
+            @RequestParam(value = "files", required = false) MultipartFile files) throws HttpMediaTypeException {
         return new ResponseEntity<>(bookService.createNewBook(dto, files), HttpStatus.OK);
     }
 
