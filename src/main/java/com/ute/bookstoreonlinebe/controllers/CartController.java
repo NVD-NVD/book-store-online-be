@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
-@RestController("/rest/cart")
+@RestController
+@RequestMapping("/rest/cart")
 public class CartController {
     @Autowired
     private UserService userService;
