@@ -27,17 +27,8 @@ public class DataSeedingListerner implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private CategoryRepository categoryRepository;
-
-    @Autowired
-    private CategoryService categoryService;
-
     @Value("${default.password}")
     private String defaultPassword;
-
-    @Value("${default.password}")
-    private String defaultAvatar;
 
     @Override
     public void run(String... args) throws Exception {

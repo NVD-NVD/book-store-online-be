@@ -20,6 +20,9 @@ public class JwtTokenUtils implements Serializable {
 
     private static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
+    @Value("${default.token_type}")
+    private String token_type;
+
     @Value("${jwt.secret}")
     private String secret;
 
@@ -60,6 +63,7 @@ public class JwtTokenUtils implements Serializable {
         tokenDetails.setToken(generateToken(userDetails));
         tokenDetails.setExpired(JWT_TOKEN_VALIDITY);
         tokenDetails.setRoles(userDetails.getAuthorities().stream().map(Object::toString).collect(Collectors.toList()));
+        tokenDetails.setToken_type(token_type);
         return tokenDetails;
     }
 

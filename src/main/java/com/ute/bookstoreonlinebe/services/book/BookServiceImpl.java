@@ -10,6 +10,7 @@ import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPublishers;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.repositories.BookRepository;
 import com.ute.bookstoreonlinebe.services.category.CategoryService;
+import com.ute.bookstoreonlinebe.services.file.FilesStorageService;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
@@ -31,8 +33,14 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private FilesStorageService storageService;
+
     @Value("${default.updatingInfoBook}")
     private String defaultInfo;
+
+    @Value("${upload.url}")
+    private String url;
 
     @Override
     public Book getBookById(String id) {
@@ -75,6 +83,7 @@ public class BookServiceImpl implements BookService {
         } else {
             book.setAuthor(defaultInfo);
         }
+        book.setCreateDate(new Date());
         if (!ObjectUtils.isEmpty(dto.getDescription())) {
             book.setDescription(dto.getDescription());
         }
@@ -111,30 +120,42 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book createNewBook(BookDto dto, MultipartFile files) {
         Book book = convertDtoToBook(dto);
+
+        bookRepository.save(book);
         if (files != null)
         {
-
+            try {
+                List<String> fileNames = new ArrayList<>();
+                String img = url + "rest/book/image/" + book.getId() + "/";
+                List<String> url_img = book.getImage_URLs();
+                Arrays.asList(files).stream().forEach(file -> {
+                    storageService.save("books/" + book.getId(), file);
+                    fileNames.add(file.getOriginalFilename());
+                });
+                fileNames.forEach(e -> url_img.add(img + e));
+                book.setImage_URLs(url_img);
+            }catch (Exception e){
+                throw new InvalidException(String.format("Không thể upload file."));
+            }
         }
-        bookRepository.save(book);
         List<EmbeddedCategory> embeddedCategoryList = book.getFallIntoCategories();
         embeddedCategoryList.forEach(
                 (e) -> {
                     Category category = new Category();
-                    if (e.getId().isEmpty()) {
+                    if (e.getId().isEmpty() && !e.getName().isEmpty()) {
                         if (categoryService.getCategoryByName(e.getName()) == null) {
                             category = categoryService.save(new Category(null,e.getName(),null,true));
                         }else {
                             category = categoryService.getCategoryByName(e.getName());
                         }
                         e.setId(category.getId());
+                        category = categoryService.getCategoryById(e.getId());
+                        List<Book> books = new ArrayList<>();
+                        books.addAll(category.getBooksOfCategory());
+                        books.add(book);
+                        category.setBooksOfCategory(books);
+                        categoryService.updateCategory(category);
                     }
-                    category = categoryService.getCategoryById(e.getId());
-                    List<Book> books = new ArrayList<>();
-                    books.addAll(category.getBooksOfCategory());
-                    books.add(book);
-                    category.setBooksOfCategory(books);
-                    categoryService.updateCategory(category);
-
                 });
         bookRepository.save(book);
         return book;
@@ -188,5 +209,44 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> searchBook(String search) {
         return bookRepository.searchBook(search);
+    }
+
+    @Override
+    public Book addImageBook(String id, MultipartFile files) {
+        Book book = getBookById(id);
+        try {
+            List<String> fileNames = new ArrayList<>();
+            String img = url + "rest/book/image/" + book.getId() + "/";
+            List<String> url_img = book.getImage_URLs();
+            Arrays.asList(files).stream().forEach(file -> {
+                storageService.save("books/" + book.getId(), file);
+                fileNames.add(file.getOriginalFilename());
+            });
+            fileNames.forEach(e -> url_img.add(img + e));
+            book.setImage_URLs(url_img);
+
+            return bookRepository.save(book);
+        }catch (Exception e){
+            throw new InvalidException(String.format("Không thể upload file."));
+        }
+
+    }
+
+    @Override
+    public Book deleteImageBook(String id, String name) {
+        Book book = getBookById(id);
+        String path = "books/" + id + "/" + name;
+        storageService.deleteImage(path);
+        List<String> images = book.getImage_URLs();
+        Iterator<String> it = images.iterator();
+        while (it.hasNext()){
+            String url = it.next();
+            String ext = url.substring(url.lastIndexOf("/"));
+            if (ext.equals(name)){
+                it.remove();
+            }
+        }
+        book.setImage_URLs(images);
+        return bookRepository.save(book);
     }
 }

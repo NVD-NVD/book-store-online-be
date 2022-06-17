@@ -35,3 +35,829 @@
 2022-06-17 12:09:44 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
 2022-06-17 12:09:44 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 7.795 seconds (JVM running for 9.606)
 2022-06-17 12:09:44 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:15446}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:44:32 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 13164 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:44:32 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:44:32 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:44:32 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:44:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:44:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:44:34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:44:34 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:44:34 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:44:34 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:44:34 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1912 ms
+2022-06-17 12:44:34 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:44:34 [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:44:35 [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:44:35 [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:44:35 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:44:35 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSeedingListerner': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+2022-06-17 12:44:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-06-17 12:44:35 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:144)
+2022-06-17 12:44:35 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+ sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:750)
+ sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+ com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+ com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:557)
+ com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:386)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:335)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:44:35 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+ sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:750)
+ sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+ com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+ com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:557)
+ com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:386)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:335)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:44:35 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac14c284c8045b89aa9ea4', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+ sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:750)
+ sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+ com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+ com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:557)
+ com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:386)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:335)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:44:35 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-17 12:44:35 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSeedingListerner': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.ute.bookstoreonlinebe.BookStoreOnlineBeApplication.main(BookStoreOnlineBeApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 36 common frames omitted
+2022-06-17 12:45:41 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 15352 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:45:41 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:45:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:45:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:45:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:45:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:45:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:45:43 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:45:43 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:45:43 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:45:43 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1976 ms
+2022-06-17 12:45:43 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:45:43 [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:45:43 [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:45:43 [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:45:44 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:45:44 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSeedingListerner': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+2022-06-17 12:45:44 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-06-17 12:45:44 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-10] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:144)
+2022-06-17 12:45:44 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:933)
+ sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:45:44 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:933)
+ sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:45:44 [restartedMain] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='62ac15078a1d88046ce0221e', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+ sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:933)
+ sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+ com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+ com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+ com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+ com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+ com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+ com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+ com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+ com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+ java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:45:44 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-17 12:45:44 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSeedingListerner': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.ute.bookstoreonlinebe.BookStoreOnlineBeApplication.main(BookStoreOnlineBeApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'uploads.url' in value "${uploads.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 36 common frames omitted
+2022-06-17 12:47:08 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 1776 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:47:08 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:47:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:47:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:47:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:47:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:47:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:47:10 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:47:10 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:47:10 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:47:10 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2735 ms
+2022-06-17 12:47:11 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:47:11 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:47:11 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:47:11 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:47:12 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:16028}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:15847}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-rtt-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15046}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-rtt-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16022}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-rtt-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:15860}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214311800, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 12:47:12 ICT 2022, lastUpdateTimeNanos=163084589164800}
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:15046}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214654100, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 12:47:12 ICT 2022, lastUpdateTimeNanos=163084589244000}
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214670500, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 12:47:12 ICT 2022, lastUpdateTimeNanos=163084589260500}
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [cluster-ClusterId{value='62ac155f1ad7cf6c80780e36', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:47:12 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 12:47:12 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f3d06c, org.springframework.security.web.context.SecurityContextPersistenceFilter@31d46aeb, org.springframework.security.web.header.HeaderWriterFilter@27af2edb, org.springframework.security.web.authentication.logout.LogoutFilter@12a6bc55, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@5676e899, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36a1d3fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36a04eb4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2da2cd53, org.springframework.security.web.session.SessionManagementFilter@4e781485, org.springframework.security.web.access.ExceptionTranslationFilter@4ef538a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f610912]
+2022-06-17 12:47:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 12:47:13 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 12:47:13 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 12:47:13 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 12:47:13 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 12:47:14 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.866 seconds (JVM running for 8.533)
+2022-06-17 12:47:14 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16060}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:48:08 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 12:48:08 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 12:48:08 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 12:48:09 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+com.ute.bookstoreonlinebe.exceptions.UserNotFoundAuthenticationException: JWT Token đã hết hạn
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:48:28 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPublishers` from Array value (token `JsonToken.START_ARRAY`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPublishers` from Array value (token `JsonToken.START_ARRAY`)<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 26, column: 17] (through reference chain: com.ute.bookstoreonlinebe.dtos.book.BookDto["publishers"])]
+2022-06-17 12:51:45 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 12740 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:51:45 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:51:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:51:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:51:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:51:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:51:47 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:51:47 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:51:47 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:51:47 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:51:47 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1659 ms
+2022-06-17 12:51:47 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:51:47 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:51:47 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:51:47 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:51:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16088}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-rtt-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:16094}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-rtt-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:15927}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:15112}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-rtt-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15111}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=227531600, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 12:51:49 ICT 2022, lastUpdateTimeNanos=163361116792400}
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=227633700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 12:51:49 ICT 2022, lastUpdateTimeNanos=163361116871700}
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:15927}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=231495200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 12:51:49 ICT 2022, lastUpdateTimeNanos=163361120724200}
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:51:48 [cluster-ClusterId{value='62ac16733eb0000b9826228c', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:51:49 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 12:51:49 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c985ee7, org.springframework.security.web.context.SecurityContextPersistenceFilter@248a20b1, org.springframework.security.web.header.HeaderWriterFilter@5a34bb81, org.springframework.security.web.authentication.logout.LogoutFilter@266874d5, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@138c6ae1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4dcf4b1b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@436d2061, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15de8428, org.springframework.security.web.session.SessionManagementFilter@300eeace, org.springframework.security.web.access.ExceptionTranslationFilter@4dce5f3a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54571b97]
+2022-06-17 12:51:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 12:51:49 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 12:51:49 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 12:51:49 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 12:51:50 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 12:51:50 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 5.779 seconds (JVM running for 7.621)
+2022-06-17 12:51:50 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16114}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:52:09 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 12:52:09 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 12:52:09 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-06-17 12:52:09 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.ute.bookstoreonlinebe.services.book.BookServiceImpl.lambda$createNewBook$1(BookServiceImpl.java:131)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.ute.bookstoreonlinebe.services.book.BookServiceImpl.createNewBook(BookServiceImpl.java:122)
+	at com.ute.bookstoreonlinebe.controllers.BookController.createNewBook(BookController.java:59)
+	at com.ute.bookstoreonlinebe.controllers.BookController$$FastClassBySpringCGLIB$$36120e91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ute.bookstoreonlinebe.controllers.BookController$$EnhancerBySpringCGLIB$$cfee431.createNewBook(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-06-17 12:55:12 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 4888 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:55:12 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:55:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:55:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:55:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:55:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:55:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:55:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:55:13 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:55:13 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:55:13 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1681 ms
+2022-06-17 12:55:14 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:55:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16179}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15158}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-rtt-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:15979}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-rtt-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:15158}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:15979}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-rtt-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:16179}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=201909700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 12:55:15 ICT 2022, lastUpdateTimeNanos=163567183314700}
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=201811700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 12:55:15 ICT 2022, lastUpdateTimeNanos=163567183234200}
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=201741200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 12:55:15 ICT 2022, lastUpdateTimeNanos=163567183164500}
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:14 [cluster-ClusterId{value='62ac1742dc84746a4b52f842', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:15 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 12:55:15 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f2a4815, org.springframework.security.web.context.SecurityContextPersistenceFilter@747b20a7, org.springframework.security.web.header.HeaderWriterFilter@10e3e520, org.springframework.security.web.authentication.logout.LogoutFilter@5a205d02, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@788439eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47b96104, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@712daacb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21773082, org.springframework.security.web.session.SessionManagementFilter@119b1964, org.springframework.security.web.access.ExceptionTranslationFilter@4505e58d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63c8f7df]
+2022-06-17 12:55:15 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 12:55:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 12:55:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 12:55:15 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 12:55:15 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 12:55:15 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 4.522 seconds (JVM running for 5.818)
+2022-06-17 12:55:16 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16174}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:55:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 12:55:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 12:55:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 12:56:11 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 17608 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:56:11 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:56:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:56:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:56:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:56:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:56:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:56:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:56:13 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:56:13 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:56:13 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2332 ms
+2022-06-17 12:56:14 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:56:14 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:56:14 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:56:14 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:56:15 [cluster-rtt-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:16129}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:15163}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-rtt-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:15974}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=248840700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 12:56:15 ICT 2022, lastUpdateTimeNanos=163627414623400}
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:16129}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:15974}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-rtt-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15178}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=252531500, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 12:56:15 ICT 2022, lastUpdateTimeNanos=163627416262800}
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=251874900, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 12:56:15 ICT 2022, lastUpdateTimeNanos=163627415585100}
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [cluster-ClusterId{value='62ac177e9cc8815bf5851f85', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:15 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:56:15 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 12:56:16 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22382d3, org.springframework.security.web.context.SecurityContextPersistenceFilter@45848553, org.springframework.security.web.header.HeaderWriterFilter@21412c77, org.springframework.security.web.authentication.logout.LogoutFilter@77f3b22, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@391956a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3fca16e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ed34b08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c83d7af, org.springframework.security.web.session.SessionManagementFilter@29398b29, org.springframework.security.web.access.ExceptionTranslationFilter@6d34f776, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72b0f786]
+2022-06-17 12:56:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 12:56:16 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 12:56:16 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 12:56:16 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 12:56:16 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 12:56:17 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.806 seconds (JVM running for 8.745)
+2022-06-17 12:56:17 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16129}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:56:26 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 12:56:26 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 12:56:26 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 12:57:14 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 18148 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 12:57:14 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 12:57:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 12:57:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 12:57:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 12:57:15 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 12:57:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 12:57:16 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 12:57:16 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 12:57:16 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 12:57:16 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2480 ms
+2022-06-17 12:57:17 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 12:57:17 [cluster-rtt-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:16008}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15191}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-rtt-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:15191}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-rtt-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16177}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:16008}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16000}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=225751800, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 12:57:18 ICT 2022, lastUpdateTimeNanos=163690255115600}
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=225694700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 12:57:18 ICT 2022, lastUpdateTimeNanos=163690255029000}
+2022-06-17 12:57:17 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=225796900, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 12:57:18 ICT 2022, lastUpdateTimeNanos=163690255169500}
+2022-06-17 12:57:18 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:18 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:18 [cluster-ClusterId{value='62ac17bdb34e6c4e9281b657', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:18 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 12:57:18 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 12:57:18 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@253aa350, org.springframework.security.web.context.SecurityContextPersistenceFilter@4afaed47, org.springframework.security.web.header.HeaderWriterFilter@1ce858bd, org.springframework.security.web.authentication.logout.LogoutFilter@7f6085f5, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@5d594519, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b22b4fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72fe5758, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@351757d3, org.springframework.security.web.session.SessionManagementFilter@52e9ec77, org.springframework.security.web.access.ExceptionTranslationFilter@241da1e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@159bfdf8]
+2022-06-17 12:57:19 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 12:57:19 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 12:57:19 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 12:57:19 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 12:57:19 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 12:57:19 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.525 seconds (JVM running for 8.296)
+2022-06-17 12:57:20 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16178}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 12:57:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 12:57:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 12:57:22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 13:18:45 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 8992 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 13:18:45 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 13:18:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 13:18:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 13:18:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 13:18:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 13:18:47 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 13:18:47 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 13:18:47 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 13:18:47 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 13:18:47 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1915 ms
+2022-06-17 13:18:48 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 13:18:48 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:18:48 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:18:48 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:16473}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:15491}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-rtt-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:15497}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:16310}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=288850800, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 13:18:49 ICT 2022, lastUpdateTimeNanos=164981389820100}
+2022-06-17 13:18:49 [cluster-rtt-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:16473}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-rtt-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16308}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=289013100, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 13:18:49 ICT 2022, lastUpdateTimeNanos=164981390122400}
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=291138400, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 13:18:49 ICT 2022, lastUpdateTimeNanos=164981389515100}
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [cluster-ClusterId{value='62ac1cc87691fc065da60f20', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:18:49 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 13:18:49 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 13:18:50 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d2a7dd7, org.springframework.security.web.context.SecurityContextPersistenceFilter@59fd7ef3, org.springframework.security.web.header.HeaderWriterFilter@7a101f1e, org.springframework.security.web.authentication.logout.LogoutFilter@4fd755f4, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@2d22488d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@407bb0ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ada49ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bf6cbbc, org.springframework.security.web.session.SessionManagementFilter@1a44156f, org.springframework.security.web.access.ExceptionTranslationFilter@179181dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e95691b]
+2022-06-17 13:18:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 13:18:50 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 13:18:50 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 13:18:50 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 13:18:50 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 13:18:50 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.127 seconds (JVM running for 8.046)
+2022-06-17 13:18:51 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16484}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:25:19 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 13:25:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 13:25:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 13:26:11 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------382989519591834784313736;charset=UTF-8' not supported]
+2022-06-17 13:26:26 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------096409949892154116876093;charset=UTF-8' not supported]
+2022-06-17 13:28:46 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 4440 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 13:28:46 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 13:28:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 13:28:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 13:28:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 13:28:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 13:28:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 13:28:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 13:28:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 13:28:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 13:28:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1800 ms
+2022-06-17 13:28:48 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 13:28:48 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:28:48 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:28:48 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:28:49 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15647}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-rtt-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:16462}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16596}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-rtt-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:16596}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-rtt-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:15647}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214600700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 13:28:50 ICT 2022, lastUpdateTimeNanos=165581674746300}
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214686500, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 13:28:50 ICT 2022, lastUpdateTimeNanos=165581674852700}
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16460}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214600200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 13:28:50 ICT 2022, lastUpdateTimeNanos=165581674746400}
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [cluster-ClusterId{value='62ac1f207d61f63cac7a98a1', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:49 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 13:28:49 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45888738, org.springframework.security.web.context.SecurityContextPersistenceFilter@138cde11, org.springframework.security.web.header.HeaderWriterFilter@52f2d43d, org.springframework.security.web.authentication.logout.LogoutFilter@7ce73eb2, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@38c17dac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2587907a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@257125a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3945a0d, org.springframework.security.web.session.SessionManagementFilter@57dfc302, org.springframework.security.web.access.ExceptionTranslationFilter@620d2320, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26c3f34a]
+2022-06-17 13:28:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 13:28:50 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 13:28:50 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 13:28:50 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 13:28:50 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 13:28:50 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 4.94 seconds (JVM running for 6.204)
+2022-06-17 13:28:50 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16643}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:28:53 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 13:28:53 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 13:28:53 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-17 13:28:54 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------211115756980059766745136;charset=UTF-8' not supported]
+2022-06-17 13:31:37 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 16232 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 13:31:37 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 13:31:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 13:31:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 13:31:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 13:31:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 13:31:38 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 13:31:38 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 13:31:38 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 13:31:39 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 13:31:39 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1916 ms
+2022-06-17 13:31:39 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 13:31:39 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:31:39 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:31:39 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 13:31:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 13:31:40 [cluster-rtt-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:15683}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-rtt-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:16694}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:15700}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-rtt-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:16512}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16694}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:16512}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=218917400, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 13:31:40 ICT 2022, lastUpdateTimeNanos=165752467667400}
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=218808400, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 13:31:40 ICT 2022, lastUpdateTimeNanos=165752467745200}
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=218792300, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 13:31:40 ICT 2022, lastUpdateTimeNanos=165752467713000}
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [cluster-ClusterId{value='62ac1fcbbda1c22fb810512d', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:40 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 13:31:40 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d9eee92, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fce05e1, org.springframework.security.web.header.HeaderWriterFilter@43f49e26, org.springframework.security.web.authentication.logout.LogoutFilter@368f9f15, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@6e848e8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2971ad4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@161e67f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@430193ef, org.springframework.security.web.session.SessionManagementFilter@a71dd53, org.springframework.security.web.access.ExceptionTranslationFilter@4d741c6d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61e846b1]
+2022-06-17 13:31:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 13:31:41 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 13:31:41 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 13:31:41 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 13:31:41 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 13:31:41 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 5.25 seconds (JVM running for 7.204)
+2022-06-17 13:31:41 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:16605}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 13:31:44 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-17 13:31:44 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-17 13:31:44 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-06-17 13:31:44 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------925603993185773934261719;charset=UTF-8' not supported]
+2022-06-17 13:32:13 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'image/jpeg;charset=UTF-8' not supported]
+2022-06-17 13:32:18 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.ute.bookstoreonlinebe.entities.Book> com.ute.bookstoreonlinebe.controllers.BookController.createNewBook(com.ute.bookstoreonlinebe.dtos.book.BookDto,org.springframework.web.multipart.MultipartFile) throws org.springframework.web.HttpMediaTypeException]
+2022-06-17 13:33:04 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile': no matching editors or conversion strategy found]
+2022-06-17 13:33:08 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------258788912166858653761848;charset=UTF-8' not supported]
+2022-06-17 14:08:47 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 16868 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-17 14:08:47 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-17 14:08:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-17 14:08:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-17 14:08:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-17 14:08:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 MongoDB repository interfaces.
+2022-06-17 14:08:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-17 14:08:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-17 14:08:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-17 14:08:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-17 14:08:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1723 ms
+2022-06-17 14:08:49 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-17 14:08:49 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-17 14:08:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:17261}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-rtt-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:17261}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:16246}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-rtt-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:17059}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=205776100, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Fri Jun 17 14:08:51 ICT 2022, lastUpdateTimeNanos=167982978982300}
+2022-06-17 14:08:50 [cluster-rtt-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:16245}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:17064}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=205690600, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Fri Jun 17 14:08:51 ICT 2022, lastUpdateTimeNanos=167982978901300}
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=205815900, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Fri Jun 17 14:08:51 ICT 2022, lastUpdateTimeNanos=167982979225200}
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 14:08:50 [cluster-ClusterId{value='62ac28817af8614d732c8f4b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-17 14:08:51 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-17 14:08:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@604cceaa, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b638662, org.springframework.security.web.header.HeaderWriterFilter@45c48a91, org.springframework.security.web.authentication.logout.LogoutFilter@2d2e8636, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@6b22533e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e2a285e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1cba0e90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69dcb751, org.springframework.security.web.session.SessionManagementFilter@56d6564c, org.springframework.security.web.access.ExceptionTranslationFilter@3ad188c8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ea6dea1]
+2022-06-17 14:08:51 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-17 14:08:51 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-17 14:08:51 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-17 14:08:51 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-17 14:08:51 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-17 14:08:51 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 4.727 seconds (JVM running for 6.057)
+2022-06-17 14:08:52 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:17255}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017

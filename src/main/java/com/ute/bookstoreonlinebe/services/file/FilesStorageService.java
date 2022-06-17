@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.services.file;
 
+import com.ute.bookstoreonlinebe.entities.Book;
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,4 +22,8 @@ public interface FilesStorageService {
     Stream<Path> loadAll();
 
     void deleteAvatar(String folder, String fileName);
+
+    void save(String uploadDir, MultipartFile file);
+
+    void deleteImage(String path);
 }

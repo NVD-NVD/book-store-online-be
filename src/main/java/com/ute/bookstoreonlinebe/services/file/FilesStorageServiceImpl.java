@@ -91,4 +91,31 @@ public class FilesStorageServiceImpl implements FilesStorageService {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void save(String uploadDir, MultipartFile file) {
+        String part = currentDirectory + uploadFolder + uploadDir;
+        Path uploadPart = Paths.get(part);
+        try {
+            if (!Files.exists(uploadPart)) {
+                Files.createDirectories(uploadPart);
+            }
+            Files.copy(file.getInputStream(), uploadPart.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void deleteImage(String path) {
+        String dlPath = currentDirectory + path;
+        try {
+            Path pathFile = Paths.get(dlPath);
+            if (Files.exists(pathFile)) {
+                Files.delete(pathFile);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }
