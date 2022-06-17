@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.HttpMediaTypeException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -55,7 +56,7 @@ public class BookController {
     @PostMapping
     public ResponseEntity<Book> createNewBook(
             @RequestBody BookDto dto,
-            @RequestParam(value = "files", required = false) MultipartFile files){
+            @RequestParam(value = "files", required = false, defaultValue = "") MultipartFile files) throws HttpMediaTypeException {
         return new ResponseEntity<>(bookService.createNewBook(dto, files), HttpStatus.OK);
     }
 
@@ -75,12 +76,28 @@ public class BookController {
         return new ResponseEntity<>(bookService.updateBook(id, dto, files), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Get avatar user")
-    @GetMapping(value = "/image/{filename}")
+    @ApiOperation(value = "Admin thêm hình ảnh cho book")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/image/{id}")
+    public ResponseEntity<Book> addImageBook(
+            @PathVariable String id, @RequestParam(value = "files", required = false) MultipartFile files){
+        return new ResponseEntity<>(bookService.addImageBook(id,  files), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Admin thêm hình ảnh cho book")
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/image/{id}/{name}")
+    public ResponseEntity<Book> deleteImageBook(
+            @PathVariable(value = "id") String id, @PathVariable(value = "name") String name){
+        return new ResponseEntity<>(bookService.deleteImageBook(id,  name), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Get book image")
+    @GetMapping(value = "/image/{id}/{filename}")
     @ResponseBody
     public ResponseEntity<Resource> getImage(
-            @PathVariable(value = "filename") String fileName){
-        String path = "book/" + fileName;
+            @PathVariable(value = "id") String id,@PathVariable(value = "name") String name){
+        String path = "books/" + id + "/" + name;
         Resource file = storageService.loadFile(path);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_JPEG);

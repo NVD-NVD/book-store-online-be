@@ -31,4 +31,8 @@ public interface BookService {
     Book removeCategoryFromBook(String bookId, String cateId);
 
     List<Book> searchBook(String search);
+
+    Book addImageBook(String id, MultipartFile files);
+
+    Book deleteImageBook(String id, String name);
 }

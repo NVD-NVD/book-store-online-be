@@ -38,6 +38,7 @@ paging:
     size: 20
 
 upload:
+  url: "https://book-store-online-be.herokuapp.com/"
   part: "/uploads/"
 
 google:
