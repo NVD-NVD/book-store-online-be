@@ -49,29 +49,6 @@ public class DataSeedingListerner implements CommandLineRunner {
                     "0989542812");
             userService.createAdmin(userDto);
 
-            UserDto dto1 = new UserDto("datnguyen2847@gmail.com", defaultPassword,
-                    "Đạt", "Nguyễn Văn",
-                    new SimpleDateFormat("MM/dd/yyyy").parse(("4/20/1997")),
-                    EnumGender.Male, "thu duc, tp.HCM",
-                    "0972588511");
-            userService.createNewUser(dto1);
-
-            UserDto dto2 = new UserDto("16110050@student.hcmute.edu.vn", defaultPassword,
-                    "Đạt", "Nguyễn Văn",
-                    new SimpleDateFormat("MM/dd/yyyy").parse(("4/20/1997")),
-                    EnumGender.Male, "thu duc, tp.HCM",
-                    "0973588511");
-            userService.createNewUser(dto2);
-        }
-
-        if (categoryRepository.count() == 0) {
-            categoryService.createNewCategory("new");
-            List<String> listName = new ArrayList<>(Arrays.asList("Sách Tiếng Việt",
-                    "Sách Tiếng Anh", "Sách Giáo Khoa", "Thiếu Nhi", "Giáo Khoa - Tham Khảo",
-                    "Văn Học", "Toán Học", "Hóa Học", "Vật Lý", "Lịch Sử", "Địa Lý",
-                    "Tiểu Thuyết", "Kinh Tế", "Khoa Học Kỹ Thuật", "Âm Nhạc"));
-            listName.forEach((e) -> categoryService.createNewCategory(e));
         }
     }
-
 }
