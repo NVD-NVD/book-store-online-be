@@ -20,6 +20,5 @@ public class TokenDetails {
 
     private List<String> roles;
 
-    @Value("${default.token_type}")
     private String token_type;
 }

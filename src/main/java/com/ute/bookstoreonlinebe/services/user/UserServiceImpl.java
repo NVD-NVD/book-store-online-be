@@ -39,6 +39,9 @@ public class UserServiceImpl implements UserService {
     @Value("${default.password}")
     private String defaultPassword;
 
+    @Value("${upload.url}")
+    private String url;
+
     @Value("${default.avatar}")
     private String defaultAvatart;
 
@@ -239,7 +242,7 @@ public class UserServiceImpl implements UserService {
             if(!nameAvatarCurrent.equals("avatar_default.png")){
                 storageService.deleteAvatar("avatar", nameAvatarCurrent);
             }
-            user.setAvatar("/avatar" + "/" + newName);
+            user.setAvatar(url + "avatar/" + newName);
             return save(user);
 
 
