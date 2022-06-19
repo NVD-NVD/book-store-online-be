@@ -56,5 +56,4 @@ public interface UserService {
 
     User deleteBookInCart(String userID, Principal principal, String bookID);
 
-    EmailDetails notiCreateEmail(User user);
 }

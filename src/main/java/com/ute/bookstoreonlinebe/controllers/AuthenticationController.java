@@ -127,15 +127,4 @@ public class AuthenticationController {
     public ResponseEntity<User> updateName(@Valid @RequestBody UserDto dto, Principal principal) {
         return new ResponseEntity<>(userService.updateName(dto, principal), HttpStatus.OK);
     }
-    /***
-     * @author:NVD-NVD
-     * @param principal: token user
-     * @return: return hello ij login success
-     */
-    @ApiOperation(value = "Test jwt")
-    @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/hello")
-    public ResponseEntity<String> hello(Principal principal) {
-        return new ResponseEntity<>("Hello", HttpStatus.OK);
-    }
 }

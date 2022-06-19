@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Collections.singletonList(EnumRole.ROLE_MEMBER.name()));
         userRepository.save(user);
 
-        mailSenderService.sendSimpleMail(notiCreateEmail(user));
+        mailSenderService.sendSignup(user);
         return user;
     }
 
@@ -204,7 +204,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User changePassword(String id, Principal principal, PasswordDto passwordDto) {
-        User user = getUserByID(id);
+        User user = checkUserWithIDAndPrincipal(id, principal);
         if (!user.getPassword().equals(passwordDto.getOldPass())){
             throw new InvalidException("Old pass does not correct");
         }
@@ -308,13 +308,5 @@ public class UserServiceImpl implements UserService {
         }
 
         return user;
-    }
-
-    @Override
-    public EmailDetails notiCreateEmail(User user) {
-        String subject = "Welcome FESHBOOk!";
-        String msgBody = String.format("Chào mừng %s đã đến với FESHBOOK!", user.getFullname());
-
-        return new EmailDetails(user.getEmail(), msgBody, subject, null);
     }
 }

@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.controllers;
 
+import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.book.BookDto;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
 import com.ute.bookstoreonlinebe.entities.Book;
@@ -35,22 +36,6 @@ public class UserController {
 
     @Autowired
     private FilesStorageService storageService;
-
-    @GetMapping("/sendSimpleEmail")
-    public String sendSimpleEmail() {
-
-        // Create a Simple MailMessage.
-        SimpleMailMessage message = new SimpleMailMessage();
-
-        message.setTo("datnguyen2847@gmail.com");
-        message.setSubject("Test Simple Email");
-        message.setText("Hello, Im testing Simple Email");
-
-        // Send Message!
-        this.emailSender.send(message);
-
-        return "Email Sent!";
-    }
 
     @ApiOperation(value = "Create a new User")
     @PreAuthorize("hasRole('ADMIN')")
@@ -127,6 +112,14 @@ public class UserController {
         headers.setContentType(MediaType.IMAGE_JPEG);
 
         return new ResponseEntity<>(file, headers , HttpStatus.OK);
+    }
+    @ApiOperation(value = "User change password")
+    @PutMapping(value = "/password/{id}")
+    @ResponseBody
+    public ResponseEntity<User> changePassword(
+            @PathVariable String id, Principal principal,
+            @RequestBody PasswordDto dto){
+        return new ResponseEntity<>(userService.changePassword(id, principal, dto) , HttpStatus.OK);
     }
 
 }

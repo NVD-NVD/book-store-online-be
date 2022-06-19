@@ -7,6 +7,7 @@ import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPrice;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.repositories.OrderRepository;
+import com.ute.bookstoreonlinebe.services.mailsender.MailSenderService;
 import com.ute.bookstoreonlinebe.services.user.UserService;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
 import com.ute.bookstoreonlinebe.utils.enums.EnumCurrency;
@@ -26,9 +27,12 @@ public class OrderServiceImpl implements OrderService{
 
     private UserService userService;
 
-    public OrderServiceImpl(OrderRepository orderRepository, UserService userService) {
+    private MailSenderService mailSenderService;
+
+    public OrderServiceImpl(OrderRepository orderRepository, UserService userService, MailSenderService mailSenderService) {
         this.orderRepository = orderRepository;
         this.userService = userService;
+        this.mailSenderService = mailSenderService;
     }
 
     @Override
@@ -68,7 +72,9 @@ public class OrderServiceImpl implements OrderService{
         order.setPay(false);
         order.setShipping(false);
         order.setDelivered(false);
-        return orderRepository.save(order);
+        orderRepository.save(order);
+        mailSenderService.sendNewOrder(user, order);
+        return order;
     }
 
     @Override
@@ -91,7 +97,9 @@ public class OrderServiceImpl implements OrderService{
                     String.format("Không thể huy đơn hàng có id %s, vì đơn hàng đã được giao.", orderID));
         }
         order.setStatus(false);
-        return orderRepository.save(order);
+        orderRepository.save(order);
+        mailSenderService.sendCallOffOrder(user, order.getId());
+        return order;
     }
 
     @Override
