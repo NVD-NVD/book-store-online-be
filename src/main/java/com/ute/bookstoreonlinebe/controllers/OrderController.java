@@ -48,7 +48,7 @@ public class OrderController {
     @ApiOperation(value = "Get order by id")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
     @GetMapping("/{id}")
-    public ResponseEntity<List<Order>> getOrderByID(
+    public ResponseEntity<List<Order>> getOrderByUserID(
             @PathVariable(value = "id") String id){
         return new ResponseEntity<>(orderService.getOrderByUserId(id), HttpStatus.OK);
     }
