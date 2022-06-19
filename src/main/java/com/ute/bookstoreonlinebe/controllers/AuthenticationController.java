@@ -108,7 +108,7 @@ public class AuthenticationController {
         try {
             authenticationManager.authenticate(authenticationToken);
         } catch (UserNotFoundAuthenticationException ex) {
-            userService.addNewUserCore(null, null, email, defaultPassword);
+            userService.addNewUserCore(null, email, defaultPassword);
         } catch (BadCredentialsException ex) {
             throw new InvalidException(ex.getMessage());
         }

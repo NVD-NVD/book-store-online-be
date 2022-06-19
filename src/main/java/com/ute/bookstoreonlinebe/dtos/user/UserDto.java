@@ -15,8 +15,7 @@ import java.util.List;
 public class UserDto {
     private String email;
     private String password;
-    private String firstName;
-    private String lastName;
+    private String fullname;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date birthday;
     private EnumGender gender;

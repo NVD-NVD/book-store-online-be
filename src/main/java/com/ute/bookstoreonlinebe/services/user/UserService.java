@@ -26,7 +26,7 @@ public interface UserService {
 
     User getUserCoreByPhone(String phone);
 
-    User addNewUserCore(String firstName, String lastname, String email, String password);
+    User addNewUserCore(String fullnam, String email, String password);
 
     User createAdmin(UserDto dto);
 

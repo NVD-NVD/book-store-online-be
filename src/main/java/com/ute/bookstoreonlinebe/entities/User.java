@@ -29,9 +29,7 @@ public class User {
     @JsonIgnore
     private String password;
 
-    private String firstName;
-
-    private String lastName;
+    private String fullname;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date birthday;

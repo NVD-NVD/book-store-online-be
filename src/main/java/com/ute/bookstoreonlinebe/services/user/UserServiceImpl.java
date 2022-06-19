@@ -89,11 +89,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User addNewUserCore(String firstName, String lastName, String email, String password) {
+    public User addNewUserCore(String fullname, String email, String password) {
         User user = new User();
         user.setEmail(email);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
+        user.setFullname(fullname);
         user.setPassword(password);
         user.setRoles(Collections.singletonList(EnumRole.ROLE_MEMBER.name()));
         user.setEnable(true);
@@ -144,8 +143,8 @@ public class UserServiceImpl implements UserService {
         user.setEmail(dto.getEmail());
         user.setPhone(dto.getPhone());
         user.setPassword(dto.getPassword());
-        user.setFirstName(dto.getFirstName());
-        user.setLastName(dto.getLastName());
+
+        user.setFullname(dto.getFullname());
         user.setBirthday(dto.getBirthday());
         user.setGender(dto.getGender());
         user.setAddress(dto.getAddress());
@@ -170,8 +169,7 @@ public class UserServiceImpl implements UserService {
         if (!ObjectUtils.isEmpty(userCoreByPhone)){
             throw new InvalidException(String.format("Phone %s đã được sử dụng", dto.getPhone()));
         }
-        user.setFirstName(dto.getFirstName());
-        user.setLastName(dto.getLastName());
+        user.setFullname(dto.getFullname());
 //        user.setPassword(dto.getPassword());
 //        if (!dto.getEmail().toLowerCase().trim().equals(user.getEmail()) &&
 //                getUserCoreByEmail(dto.getEmail().toLowerCase().trim()) == null) {
@@ -226,8 +224,7 @@ public class UserServiceImpl implements UserService {
     public User updateName(UserDto dto, Principal principal) {
         User user = userRepository.findByEmail(principal.getName())
                 .orElseThrow(() -> new NotFoundException(String.format("Account have email %s does not exist", principal.getName())));
-        user.setFirstName(dto.getFirstName());
-        user.setLastName(dto.getLastName());
+        user.setFullname(dto.getFullname());
         userRepository.save(user);
         return user;
     }
