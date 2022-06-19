@@ -52,6 +52,13 @@ public class OrderController {
             @PathVariable(value = "id") String id){
         return new ResponseEntity<>(orderService.getOrderByUserId(id), HttpStatus.OK);
     }
+    @ApiOperation(value = "Get list order success by userId")
+    @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
+    @GetMapping("/success/{id}")
+    public ResponseEntity<List<Order>> getOrderSuccessByUserID(
+            @PathVariable(value = "id") String id){
+        return new ResponseEntity<>(orderService.getOrderSuccessByUserId(id), HttpStatus.OK);
+    }
 
     @ApiOperation(value = "Get list order by userId, với status = true, delivered = false")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")

@@ -162,14 +162,19 @@ public class OrderServiceImpl implements OrderService{
                 // status = true, shipping = true, delivered = false
                 return orderRepository.getListOrderByUserIdWithIf(id, true, true, false);
             case 3:
+                // hoan thanh
                 // status = true, shipping = true, delivered = true
                 return orderRepository.getListOrderByUserIdWithIf(id, true, true, true);
             case 4:
                 // status = false
-                System.out.println("status 4");
                 return orderRepository.getListOrderByUserIdWithStatusFalse(id, false);
             default:
                 throw new InvalidException(String.format("Status không hợp lệ."));
         }
+    }
+
+    @Override
+    public List<Order> getOrderSuccessByUserId(String id) {
+        return orderRepository.getListOrderByUserIdWithIf(id, true, true, true);
     }
 }

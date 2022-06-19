@@ -43,7 +43,7 @@ public class Book {
 
     private long quantity;
 
-    private long sold;
+    private long sold; // số lượng đã bán
 
     private long bookLockNumber;
 
