@@ -156,7 +156,7 @@ public class UserServiceImpl implements UserService {
         user.setBirthday(dto.getBirthday());
         user.setGender(dto.getGender());
         user.setAddress(dto.getAddress());
-        user.setAvatar(defaultAvatart);
+        user.setAvatar(url + "rest/user/" + defaultAvatart);
 
         user.setEnable(true);
         return user;
@@ -252,7 +252,7 @@ public class UserServiceImpl implements UserService {
             if(!nameAvatarCurrent.equals("avatar_default.png")){
                 storageService.deleteAvatar("avatar", nameAvatarCurrent);
             }
-            user.setAvatar(url + "avatar/" + newName);
+            user.setAvatar(url + "rest/user/avatar/" + newName);
             return save(user);
 
 

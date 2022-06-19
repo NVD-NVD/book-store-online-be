@@ -8,6 +8,7 @@ import com.ute.bookstoreonlinebe.services.order.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.*;
@@ -32,6 +33,12 @@ public class StatisticServiceImpl implements StatisticService{
         System.out.println(date.get(weekFields.dayOfWeek()));
         System.out.println(weekFields.dayOfWeek());
         List<Date> dates = new ArrayList<>();
+
+        return null;
+    }
+
+    @Override
+    public Statistic getTurnoverWeekPresent() {
         // get today and clear time of day
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0); // ! clear would not reset the hour of day !
@@ -53,6 +60,11 @@ public class StatisticServiceImpl implements StatisticService{
             System.out.println(e.toString());
 //            statisticByDays.add(new StatisticByDay(e.getOrderDate(), ));
         });
+        return null;
+    }
+
+    @Override
+    public Statistic getTurnoverByDay(Data data) {
         return null;
     }
 
