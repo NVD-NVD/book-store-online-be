@@ -20,9 +20,14 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @ApiOperation(value = "test")
+    @GetMapping("/test")
+    public ResponseEntity<String> testOrder(){
+        return new ResponseEntity<>("test order", HttpStatus.OK);
+    }
     @ApiOperation(value = "Get tất cả Order không phân trang cho admin")
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Order>> getAllOrder(){
         return new ResponseEntity<>(orderService.getAllOrder(), HttpStatus.OK);
     }
@@ -43,9 +48,9 @@ public class OrderController {
     @ApiOperation(value = "Get order by id")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderByID(
+    public ResponseEntity<List<Order>> getOrderByID(
             @PathVariable(value = "id") String id){
-        return new ResponseEntity<>(orderService.getOrderById(id), HttpStatus.OK);
+        return new ResponseEntity<>(orderService.getOrderByUserId(id), HttpStatus.OK);
     }
 
     @ApiOperation(value = "User tạo đơn đặt hàng")
@@ -53,6 +58,7 @@ public class OrderController {
     @PostMapping("/{id}")
     public ResponseEntity<Order> createNewOrder(
             @PathVariable(value = "id") String id, Principal principal,@RequestBody CartDto dto){
+        System.out.println(id);
         return new ResponseEntity<>(orderService.createNewOrder(id, principal, dto), HttpStatus.OK);
     }
 

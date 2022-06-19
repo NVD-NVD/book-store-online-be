@@ -30,8 +30,6 @@ public class Order {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date orderDate;
 
-    @Nullable
-    @DBRef
     private List<EmbeddedBookInOrder> booksInOrder = new ArrayList<>();
 
     @NonNull

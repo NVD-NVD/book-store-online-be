@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 public class CartDto {
-    private String userID;
+//    private String userID;
 
     private List<CartDetail> cardDetail = new ArrayList<>();
 }

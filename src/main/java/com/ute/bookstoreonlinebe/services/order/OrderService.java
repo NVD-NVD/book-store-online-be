@@ -13,6 +13,7 @@ public interface OrderService {
     Page<Order> getOrderPaging(String search, int page, int size, String sort, String column);
 
     Order getOrderById(String id);
+    List<Order> getOrderByUserId(String id);
 
     Order createNewOrder(String userID, Principal principal, CartDto dto);
 

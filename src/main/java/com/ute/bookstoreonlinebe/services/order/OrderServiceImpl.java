@@ -61,6 +61,12 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public List<Order> getOrderByUserId(String id) {
+        return orderRepository.getOrderByUserId(id)
+                .orElseThrow(() -> new NotFoundException(String.format("Order có id %s không tồn tại", id)));
+    }
+
+    @Override
     public Order createNewOrder(String userID, Principal principal, CartDto dto) {
         User user = userService.checkUserWithIDAndPrincipal(userID,principal);
         Order order = new Order();
@@ -70,6 +76,7 @@ public class OrderServiceImpl implements OrderService{
         dto.getCardDetail().forEach(
                 e -> {
                     Book book = bookService.getBookById(e.getBookID());
+                    System.out.println("Book Id :" + book.toString());
                     EmbeddedBookInOrder embeddedBookInOrder = new EmbeddedBookInOrder();
                     embeddedBookInOrder.setBook(book);
                     embeddedBookInOrder.setQuantity(e.getQuantity());
