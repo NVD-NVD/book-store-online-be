@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.services.category;
 
+import com.ute.bookstoreonlinebe.dtos.CategoryDto;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.entities.Book;
@@ -128,10 +129,10 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public List<String> getListNamecategory() {
+    public List<CategoryDto> getListNamecategory() {
         List<Category> categories = getAllCategory();
-        List<String> categoryname = new ArrayList<>();
-        categories.forEach(e -> categoryname.add(e.getName()));
-        return categoryname;
+        List<CategoryDto> dtos = new ArrayList<>();
+        categories.forEach(e -> dtos.add(new CategoryDto(e.getId(),e.getName())));
+        return dtos;
     }
 }

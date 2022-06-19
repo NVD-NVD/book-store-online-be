@@ -59,6 +59,8 @@ public class MailSenderServiceImpl implements MailSenderService{
 
     @Override
     public String sendNewOrder(User user) {
+        String subject = "Welcome FESHBOOk!";
+        String msgBody = String.format("Chào mừng %s đã đến với FESHBOOK!", user.getFullname());
         return null;
     }
 

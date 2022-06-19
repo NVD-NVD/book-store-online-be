@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.controllers;
 
+import com.ute.bookstoreonlinebe.dtos.CategoryDto;
 import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.Category;
 import com.ute.bookstoreonlinebe.services.category.CategoryService;
@@ -28,7 +29,7 @@ public class CategoryController {
 
     @ApiOperation(value = "Get list name Category")
     @GetMapping
-    public ResponseEntity<List<String>> getListNameCategory(){
+    public ResponseEntity<List<CategoryDto>> getListNameCategory(){
         return new ResponseEntity<>(categoryService.getListNamecategory(), HttpStatus.OK);
     }
 

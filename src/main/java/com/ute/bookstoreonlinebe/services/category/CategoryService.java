@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.services.category;
 
+import com.ute.bookstoreonlinebe.dtos.CategoryDto;
 import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.Category;
 import org.springframework.data.domain.Page;
@@ -33,5 +34,5 @@ public interface CategoryService {
 
     Category save(Category category);
 
-    List<String> getListNamecategory();
+    List<CategoryDto> getListNamecategory();
 }
