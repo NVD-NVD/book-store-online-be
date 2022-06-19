@@ -4,6 +4,7 @@ import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.book.BookInCart;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
 import com.ute.bookstoreonlinebe.entities.User;
+import com.ute.bookstoreonlinebe.models.EmailDetails;
 import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -54,4 +55,6 @@ public interface UserService {
     User addBookToCart(String userID, Principal principal, BookInCart bookInCart);
 
     User deleteBookInCart(String userID, Principal principal, String bookID);
+
+    EmailDetails notiCreateEmail(User user);
 }

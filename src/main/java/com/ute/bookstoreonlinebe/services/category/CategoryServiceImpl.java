@@ -126,4 +126,12 @@ public class CategoryServiceImpl implements CategoryService{
     public Category save(Category category) {
         return categoryRepository.save(category);
     }
+
+    @Override
+    public List<String> getListNamecategory() {
+        List<Category> categories = getAllCategory();
+        List<String> categoryname = new ArrayList<>();
+        categories.forEach(e -> categoryname.add(e.getName()));
+        return categoryname;
+    }
 }

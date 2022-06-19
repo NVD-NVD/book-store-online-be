@@ -9,9 +9,11 @@ import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCardListBook;
 import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCart;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
+import com.ute.bookstoreonlinebe.models.EmailDetails;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
 import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.services.file.FilesStorageService;
+import com.ute.bookstoreonlinebe.services.mailsender.MailSenderService;
 import com.ute.bookstoreonlinebe.utils.enums.EnumRole;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +45,9 @@ public class UserServiceImpl implements UserService {
 
     @Value("${default.password}")
     private String defaultPassword;
+
+    @Autowired
+    private MailSenderService mailSenderService;
 
     @Value("${upload.url}")
     private String url;
@@ -114,6 +119,8 @@ public class UserServiceImpl implements UserService {
 
         user.setRoles(Collections.singletonList(EnumRole.ROLE_MEMBER.name()));
         userRepository.save(user);
+
+        mailSenderService.sendSimpleMail(notiCreateEmail(user));
         return user;
     }
 
@@ -301,5 +308,13 @@ public class UserServiceImpl implements UserService {
         }
 
         return user;
+    }
+
+    @Override
+    public EmailDetails notiCreateEmail(User user) {
+        String subject = "Welcome FESHBOOk!";
+        String msgBody = String.format("Chào mừng %s đã đến với FESHBOOK!", user.getFullname());
+
+        return new EmailDetails(user.getEmail(), msgBody, subject, null);
     }
 }

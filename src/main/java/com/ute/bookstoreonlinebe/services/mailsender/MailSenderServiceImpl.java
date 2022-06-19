@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.services.mailsender;
 
+import com.ute.bookstoreonlinebe.entities.User;
 import com.ute.bookstoreonlinebe.models.EmailDetails;
 import com.ute.bookstoreonlinebe.models.MyConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,34 @@ public class MailSenderServiceImpl implements MailSenderService{
         catch (Exception e) {
             return "Error while Sending Mail";
         }
+    }
+
+    @Override
+    public String sendSignup(User user) {
+        String subject = "Welcome FESHBOOk!";
+        String msgBody = String.format("Chào mừng %s đã đến với FESHBOOK!", user.getFullname());
+
+        return sendSimpleMail(new EmailDetails(user.getEmail(), msgBody,subject,null));
+    }
+
+    @Override
+    public String sendNewOrder(User user) {
+        return null;
+    }
+
+    @Override
+    public String sendCallOffOrder(User user) {
+        return null;
+    }
+
+    @Override
+    public String sendChangePassword(User user) {
+        return null;
+    }
+
+    @Override
+    public String sendForgotPassword(User user) {
+        return null;
     }
 
     // Method 2

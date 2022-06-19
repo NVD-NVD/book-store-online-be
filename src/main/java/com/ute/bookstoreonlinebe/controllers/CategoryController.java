@@ -26,6 +26,12 @@ public class CategoryController {
         return new ResponseEntity<>(categoryService.getAllCategory(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Get list name Category")
+    @GetMapping
+    public ResponseEntity<List<String>> getListNameCategory(){
+        return new ResponseEntity<>(categoryService.getListNamecategory(), HttpStatus.OK);
+    }
+
     @ApiOperation(value = "Get Category by id")
     @GetMapping("/{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable String id){

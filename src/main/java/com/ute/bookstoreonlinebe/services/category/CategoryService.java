@@ -32,4 +32,6 @@ public interface CategoryService {
     Category updateCategory(Category category);
 
     Category save(Category category);
+
+    List<String> getListNamecategory();
 }
