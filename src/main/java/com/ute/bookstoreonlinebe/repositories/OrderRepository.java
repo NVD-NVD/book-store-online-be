@@ -16,6 +16,13 @@ public interface OrderRepository extends MongoRepository<Order, String> {
 
     @Query(value = "{'user': ?0}")
     Optional<List<Order>> getOrderByUserId(String id);
+
     @Query(value = "{$week: ?0}")
     List<Order> getOrderByOrderDate(Calendar search);
+
+    @Query(value = "{$and: [{'user': ?0}, {'status' : ?1}, {'shipping': ?2}, {'delivered' : ?3}]}")
+    List<Order> getListOrderByUserIdWithIf(String id, boolean status, boolean shipping, boolean delivered);
+
+    @Query(value = "{$and: [{'user': ?0}, {'status' : ?1}]}")
+    List<Order> getListOrderByUserIdWithStatusFalse(String id, boolean status);
 }

@@ -3790,3 +3790,753 @@ org.springframework.data.mapping.MappingException: No id property found on class
 2022-06-19 21:22:47 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-06-19 21:22:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2022-06-19 21:22:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-06-20 00:26:07 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 11248 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-20 00:26:07 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-20 00:26:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-20 00:26:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-20 00:26:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-20 00:26:11 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 204 ms. Found 4 MongoDB repository interfaces.
+2022-06-20 00:26:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-20 00:26:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-20 00:26:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-20 00:26:12 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-20 00:26:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4749 ms
+2022-06-20 00:26:13 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-20 00:26:13 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:26:13 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:26:13 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:67514}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-rtt-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:69008}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=401906200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Mon Jun 20 00:26:15 ICT 2022, lastUpdateTimeNanos=377827876541300}
+2022-06-20 00:26:14 [cluster-rtt-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:67514}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-rtt-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:68430}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:68435}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:69008}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=412255300, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Mon Jun 20 00:26:15 ICT 2022, lastUpdateTimeNanos=377827885784000}
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=410257700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Mon Jun 20 00:26:15 ICT 2022, lastUpdateTimeNanos=377827885029600}
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [cluster-ClusterId{value='62af5c3551f35135eec0be0b', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:26:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-20 00:26:16 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-20 00:26:17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8249959, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c7bb90e, org.springframework.security.web.header.HeaderWriterFilter@4b37cc5, org.springframework.security.web.authentication.logout.LogoutFilter@1a41a2c1, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@697fd470, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b4bc06b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39ab2669, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f23b0f8, org.springframework.security.web.session.SessionManagementFilter@20567d89, org.springframework.security.web.access.ExceptionTranslationFilter@730d91c2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7bc574fe]
+2022-06-20 00:26:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-20 00:26:18 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-20 00:26:18 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-20 00:26:18 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-20 00:26:19 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-20 00:26:19 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 12.632 seconds (JVM running for 16.015)
+2022-06-20 00:26:19 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:68970}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:28:11 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-20 00:28:11 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-20 00:28:11 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-20 00:29:49 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.] with root cause
+org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.
+	at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:327)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readList(ParameterBindingDocumentCodec.java:367)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:346)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:229)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.captureExpressionDependencies(ParameterBindingDocumentCodec.java:202)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.getBindingContext(StringBasedMongoQuery.java:136)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.createQuery(StringBasedMongoQuery.java:121)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.doExecute(AbstractMongoQuery.java:122)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:107)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy90.getListOrderByUserIdWithStatusFalse(Unknown Source)
+	at com.ute.bookstoreonlinebe.services.order.OrderServiceImpl.getListOrderByUserIdWithIf(OrderServiceImpl.java:169)
+	at com.ute.bookstoreonlinebe.controllers.OrderController.getOrderByUserIDAndStatus(OrderController.java:61)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$FastClassBySpringCGLIB$$41927fde.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$EnhancerBySpringCGLIB$$36ebc6e.getOrderByUserIDAndStatus(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: org.bson.json.JsonParseException: Trying to read past EOF.
+		at org.springframework.data.mongodb.util.json.JsonBuffer.read(JsonBuffer.java:50)
+		at org.springframework.data.mongodb.util.json.JsonScanner.nextToken(JsonScanner.java:70)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.popToken(ParameterBindingJsonReader.java:732)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:332)
+		at org.bson.AbstractBsonReader.verifyBSONType(AbstractBsonReader.java:679)
+		at org.bson.AbstractBsonReader.checkPreconditions(AbstractBsonReader.java:721)
+		at org.bson.AbstractBsonReader.readString(AbstractBsonReader.java:456)
+		at org.bson.codecs.StringCodec.decode(StringCodec.java:80)
+		at org.bson.codecs.StringCodec.decode(StringCodec.java:31)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:360)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:235)
+		... 119 common frames omitted
+2022-06-20 00:31:07 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 8040 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-20 00:31:07 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-20 00:31:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-20 00:31:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-20 00:31:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-20 00:31:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 4 MongoDB repository interfaces.
+2022-06-20 00:31:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-20 00:31:10 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-20 00:31:10 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-20 00:31:10 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-20 00:31:10 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2975 ms
+2022-06-20 00:31:10 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-20 00:31:10 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:31:10 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:31:10 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:31:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:67591}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-rtt-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:69151}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:68506}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:69146}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-rtt-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:67591}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-rtt-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:68506}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=213957100, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Mon Jun 20 00:31:12 ICT 2022, lastUpdateTimeNanos=378125054858700}
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=214240700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Mon Jun 20 00:31:12 ICT 2022, lastUpdateTimeNanos=378125054936700}
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=215402700, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Mon Jun 20 00:31:12 ICT 2022, lastUpdateTimeNanos=378125054858800}
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:11 [cluster-ClusterId{value='62af5d5e907255657e7afecf', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:12 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-20 00:31:12 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7428c1a8, org.springframework.security.web.context.SecurityContextPersistenceFilter@6669eb4a, org.springframework.security.web.header.HeaderWriterFilter@8e1ffb5, org.springframework.security.web.authentication.logout.LogoutFilter@c2c91e4, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@4729f2e3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19c13712, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@174509f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e9e6719, org.springframework.security.web.session.SessionManagementFilter@6114f588, org.springframework.security.web.access.ExceptionTranslationFilter@6e8f7d33, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63cbb6ca]
+2022-06-20 00:31:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-20 00:31:12 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-20 00:31:12 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-20 00:31:12 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-20 00:31:12 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-20 00:31:13 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.725 seconds (JVM running for 8.875)
+2022-06-20 00:31:13 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:69137}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:31:19 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-20 00:31:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-20 00:31:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-06-20 00:31:19 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.] with root cause
+org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.
+	at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:327)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readList(ParameterBindingDocumentCodec.java:367)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:346)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:229)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.captureExpressionDependencies(ParameterBindingDocumentCodec.java:202)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.getBindingContext(StringBasedMongoQuery.java:136)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.createQuery(StringBasedMongoQuery.java:121)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.doExecute(AbstractMongoQuery.java:122)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:107)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy90.getListOrderByUserIdWithStatusFalse(Unknown Source)
+	at com.ute.bookstoreonlinebe.services.order.OrderServiceImpl.getListOrderByUserIdWithIf(OrderServiceImpl.java:169)
+	at com.ute.bookstoreonlinebe.controllers.OrderController.getOrderByUserIDAndStatus(OrderController.java:61)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$FastClassBySpringCGLIB$$41927fde.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$EnhancerBySpringCGLIB$$7cbf3a83.getOrderByUserIDAndStatus(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: org.bson.json.JsonParseException: Trying to read past EOF.
+		at org.springframework.data.mongodb.util.json.JsonBuffer.read(JsonBuffer.java:50)
+		at org.springframework.data.mongodb.util.json.JsonScanner.nextToken(JsonScanner.java:70)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.popToken(ParameterBindingJsonReader.java:732)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:332)
+		at org.bson.AbstractBsonReader.verifyBSONType(AbstractBsonReader.java:679)
+		at org.bson.AbstractBsonReader.checkPreconditions(AbstractBsonReader.java:721)
+		at org.bson.AbstractBsonReader.readString(AbstractBsonReader.java:456)
+		at org.bson.codecs.StringCodec.decode(StringCodec.java:80)
+		at org.bson.codecs.StringCodec.decode(StringCodec.java:31)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:360)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:235)
+		... 119 common frames omitted
+2022-06-20 00:35:15 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 11380 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-20 00:35:15 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-20 00:35:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-20 00:35:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-20 00:35:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-20 00:35:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 4 MongoDB repository interfaces.
+2022-06-20 00:35:18 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-20 00:35:18 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-20 00:35:18 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-20 00:35:18 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-20 00:35:18 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2812 ms
+2022-06-20 00:35:18 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-20 00:35:18 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:35:18 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:35:18 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:35:19 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-20 00:35:19 [cluster-rtt-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:68567}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:67649}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-rtt-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:67650}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:69145}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-rtt-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:69145}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:68567}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=212220200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Mon Jun 20 00:35:20 ICT 2022, lastUpdateTimeNanos=378372867860600}
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=212542800, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Mon Jun 20 00:35:20 ICT 2022, lastUpdateTimeNanos=378372867860600}
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=212634600, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Mon Jun 20 00:35:20 ICT 2022, lastUpdateTimeNanos=378372867928900}
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [cluster-ClusterId{value='62af5e562e44321079fe73e7', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:19 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-20 00:35:19 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3403c18e, org.springframework.security.web.context.SecurityContextPersistenceFilter@78a49a75, org.springframework.security.web.header.HeaderWriterFilter@320bc0b7, org.springframework.security.web.authentication.logout.LogoutFilter@b30f2cf, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@296f7e12, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51b611ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f20af89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@182042a7, org.springframework.security.web.session.SessionManagementFilter@53e62d09, org.springframework.security.web.access.ExceptionTranslationFilter@4a731e7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@463f19cb]
+2022-06-20 00:35:20 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-20 00:35:20 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-20 00:35:20 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-20 00:35:20 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-20 00:35:20 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-20 00:35:20 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 6.01 seconds (JVM running for 7.262)
+2022-06-20 00:35:20 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:69169}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:35:27 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-20 00:35:27 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-20 00:35:27 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-06-20 00:35:31 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.] with root cause
+org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.
+	at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:327)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readList(ParameterBindingDocumentCodec.java:367)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:346)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:229)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.captureExpressionDependencies(ParameterBindingDocumentCodec.java:202)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.getBindingContext(StringBasedMongoQuery.java:136)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.createQuery(StringBasedMongoQuery.java:121)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.doExecute(AbstractMongoQuery.java:122)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:107)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy90.getListOrderByUserIdWithStatusFalse(Unknown Source)
+	at com.ute.bookstoreonlinebe.services.order.OrderServiceImpl.getListOrderByUserIdWithIf(OrderServiceImpl.java:169)
+	at com.ute.bookstoreonlinebe.controllers.OrderController.getOrderByUserIDAndStatus(OrderController.java:61)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$FastClassBySpringCGLIB$$41927fde.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$EnhancerBySpringCGLIB$$98426cc0.getOrderByUserIDAndStatus(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: org.bson.json.JsonParseException: Trying to read past EOF.
+		at org.springframework.data.mongodb.util.json.JsonBuffer.read(JsonBuffer.java:50)
+		at org.springframework.data.mongodb.util.json.JsonScanner.nextToken(JsonScanner.java:70)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.popToken(ParameterBindingJsonReader.java:732)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:332)
+		at org.bson.AbstractBsonReader.verifyBSONType(AbstractBsonReader.java:679)
+		at org.bson.AbstractBsonReader.checkPreconditions(AbstractBsonReader.java:721)
+		at org.bson.AbstractBsonReader.readBoolean(AbstractBsonReader.java:299)
+		at org.bson.codecs.BooleanCodec.decode(BooleanCodec.java:35)
+		at org.bson.codecs.BooleanCodec.decode(BooleanCodec.java:27)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:360)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:235)
+		... 119 common frames omitted
+2022-06-20 00:36:47 [http-nio-8080-exec-5] WARN  o.s.w.s.m.a.ResponseStatusExceptionResolver - Resolved [com.ute.bookstoreonlinebe.exceptions.InvalidException: Status không hợp lệ.]
+2022-06-20 00:37:17 [http-nio-8080-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.] with root cause
+org.bson.json.JsonParseException: JSON reader was expecting a value but found '}'.
+	at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:327)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readList(ParameterBindingDocumentCodec.java:367)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:346)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:229)
+	at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.captureExpressionDependencies(ParameterBindingDocumentCodec.java:202)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.getBindingContext(StringBasedMongoQuery.java:136)
+	at org.springframework.data.mongodb.repository.query.StringBasedMongoQuery.createQuery(StringBasedMongoQuery.java:121)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.doExecute(AbstractMongoQuery.java:122)
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:107)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy90.getListOrderByUserIdWithStatusFalse(Unknown Source)
+	at com.ute.bookstoreonlinebe.services.order.OrderServiceImpl.getListOrderByUserIdWithIf(OrderServiceImpl.java:169)
+	at com.ute.bookstoreonlinebe.controllers.OrderController.getOrderByUserIDAndStatus(OrderController.java:61)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$FastClassBySpringCGLIB$$41927fde.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ute.bookstoreonlinebe.controllers.OrderController$$EnhancerBySpringCGLIB$$98426cc0.getOrderByUserIDAndStatus(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.ute.bookstoreonlinebe.securities.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:51)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: org.bson.json.JsonParseException: Trying to read past EOF.
+		at org.springframework.data.mongodb.util.json.JsonBuffer.read(JsonBuffer.java:50)
+		at org.springframework.data.mongodb.util.json.JsonScanner.nextToken(JsonScanner.java:70)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.popToken(ParameterBindingJsonReader.java:732)
+		at org.springframework.data.mongodb.util.json.ParameterBindingJsonReader.readBsonType(ParameterBindingJsonReader.java:332)
+		at org.bson.AbstractBsonReader.verifyBSONType(AbstractBsonReader.java:679)
+		at org.bson.AbstractBsonReader.checkPreconditions(AbstractBsonReader.java:721)
+		at org.bson.AbstractBsonReader.readBoolean(AbstractBsonReader.java:299)
+		at org.bson.codecs.BooleanCodec.decode(BooleanCodec.java:35)
+		at org.bson.codecs.BooleanCodec.decode(BooleanCodec.java:27)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.readValue(ParameterBindingDocumentCodec.java:360)
+		at org.springframework.data.mongodb.util.json.ParameterBindingDocumentCodec.decode(ParameterBindingDocumentCodec.java:235)
+		... 119 common frames omitted
+2022-06-20 00:37:59 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 1716 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-20 00:37:59 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-20 00:38:00 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-20 00:38:00 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-20 00:38:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-20 00:38:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 4 MongoDB repository interfaces.
+2022-06-20 00:38:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-20 00:38:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-20 00:38:01 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-20 00:38:02 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-20 00:38:02 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1916 ms
+2022-06-20 00:38:02 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-20 00:38:02 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:02 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:02 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:02 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-20 00:38:03 [cluster-rtt-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:69145}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-rtt-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:67688}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:69145}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:67684}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=204073500, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Mon Jun 20 00:38:03 ICT 2022, lastUpdateTimeNanos=378536338627300}
+2022-06-20 00:38:03 [cluster-rtt-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:68605}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=204437200, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Mon Jun 20 00:38:03 ICT 2022, lastUpdateTimeNanos=378536338707000}
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:68603}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=204381800, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Mon Jun 20 00:38:03 ICT 2022, lastUpdateTimeNanos=378536338627300}
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [cluster-ClusterId{value='62af5efa128cf0197a8e4136', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:03 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-20 00:38:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73084d44, org.springframework.security.web.context.SecurityContextPersistenceFilter@70f6b3af, org.springframework.security.web.header.HeaderWriterFilter@526ae06b, org.springframework.security.web.authentication.logout.LogoutFilter@2aaf14d5, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@346bc6f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22b5308b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e99c86c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@669ffb3a, org.springframework.security.web.session.SessionManagementFilter@69b4c1b4, org.springframework.security.web.access.ExceptionTranslationFilter@5be9445e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ddf50c8]
+2022-06-20 00:38:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-20 00:38:03 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-20 00:38:03 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-20 00:38:03 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-20 00:38:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-20 00:38:04 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 4.859 seconds (JVM running for 6.24)
+2022-06-20 00:38:04 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:69163}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:24 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Starting BookStoreOnlineBeApplication using Java 1.8.0_201 on DESKTOP-5DO3IKJ with PID 13140 (E:\KH2_21_22\TLCN\book-store-online-be\target\classes started by datng in E:\KH2_21_22\TLCN\book-store-online-be)
+2022-06-20 00:38:24 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - The following 1 profile is active: "dev"
+2022-06-20 00:38:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-20 00:38:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-20 00:38:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-20 00:38:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 4 MongoDB repository interfaces.
+2022-06-20 00:38:26 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-20 00:38:26 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-20 00:38:26 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-06-20 00:38:26 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-20 00:38:26 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1696 ms
+2022-06-20 00:38:27 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.ipjdu.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-7cgzv6-shard-0'}
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-00.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-02.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-srv-cluster0.ipjdu.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server cluster0-shard-00-01.ipjdu.mongodb.net:27017 to client view of cluster
+2022-06-20 00:38:27 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:67695}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-rtt-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:69248}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-rtt-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:67695}] to cluster0-shard-00-01.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-01.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=198298100, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-01.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2d75c0376575e957dedd, counter=3}, lastWriteDate=Mon Jun 20 00:38:28 ICT 2022, lastUpdateTimeNanos=378561087842700}
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:69248}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:68609}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.ipjdu.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=206073600, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-00.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2b1fdd7c46c1a0e87edd, counter=4}, lastWriteDate=Mon Jun 20 00:38:28 ICT 2022, lastUpdateTimeNanos=378561095493200}
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.ipjdu.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=205955900, setName='atlas-7cgzv6-shard-0', canonicalAddress=cluster0-shard-00-02.ipjdu.mongodb.net:27017, hosts=[cluster0-shard-00-00.ipjdu.mongodb.net:27017, cluster0-shard-00-01.ipjdu.mongodb.net:27017, cluster0-shard-00-02.ipjdu.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.ipjdu.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000000e, setVersion=2, topologyVersion=TopologyVersion{processId=62ab2c75fb48b947e7e1949b, counter=6}, lastWriteDate=Mon Jun 20 00:38:28 ICT 2022, lastUpdateTimeNanos=378561095493200}
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff000000000000000e from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 2 from replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-02.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:27 [cluster-rtt-ClusterId{value='62af5f1399833c535b5ce12e', description='null'}-cluster0-shard-00-00.ipjdu.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:68611}] to cluster0-shard-00-00.ipjdu.mongodb.net:27017
+2022-06-20 00:38:28 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-06-20 00:38:28 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ebd0d48, org.springframework.security.web.context.SecurityContextPersistenceFilter@19e49f3f, org.springframework.security.web.header.HeaderWriterFilter@226beaed, org.springframework.security.web.authentication.logout.LogoutFilter@49e66695, com.ute.bookstoreonlinebe.securities.JwtTokenFilter@659588d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@649e4501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74b9f9ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ad3da8d, org.springframework.security.web.session.SessionManagementFilter@79fd8728, org.springframework.security.web.access.ExceptionTranslationFilter@62b9b034, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cb82546]
+2022-06-20 00:38:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-20 00:38:28 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-06-20 00:38:28 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-06-20 00:38:28 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-06-20 00:38:29 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getAllOrderUsingGET_1
+2022-06-20 00:38:29 [restartedMain] INFO  c.u.b.BookStoreOnlineBeApplication - Started BookStoreOnlineBeApplication in 4.9 seconds (JVM running for 6.083)
+2022-06-20 00:38:29 [restartedMain] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:69249}] to cluster0-shard-00-02.ipjdu.mongodb.net:27017
+2022-06-20 00:38:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-20 00:38:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-06-20 00:38:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms

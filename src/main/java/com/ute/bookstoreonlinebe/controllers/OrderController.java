@@ -45,12 +45,20 @@ public class OrderController {
                 orderService.getOrderPaging(search,page,size,sort,column), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Get order by id")
+    @ApiOperation(value = "Get list order by userId")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
     @GetMapping("/{id}")
     public ResponseEntity<List<Order>> getOrderByUserID(
             @PathVariable(value = "id") String id){
         return new ResponseEntity<>(orderService.getOrderByUserId(id), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Get list order by userId, với status = true, delivered = false")
+    @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
+    @GetMapping("/{id}/{status}")
+    public ResponseEntity<List<Order>> getOrderByUserIDAndStatus(
+            @PathVariable(value = "id") String id, @PathVariable(value = "status") int status){
+        return new ResponseEntity<>(orderService.getListOrderByUserIdWithIf(id, status), HttpStatus.OK);
     }
 
     @ApiOperation(value = "User tạo đơn đặt hàng")

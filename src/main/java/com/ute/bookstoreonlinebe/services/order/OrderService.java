@@ -28,4 +28,6 @@ public interface OrderService {
     Order changeShippingOrder(String id);
 
     Order changeDeliveredOrder(String id);
+
+    List<Order> getListOrderByUserIdWithIf(String id, int status);
 }
