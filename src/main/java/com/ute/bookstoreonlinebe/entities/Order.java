@@ -1,6 +1,7 @@
 package com.ute.bookstoreonlinebe.entities;
 
 import com.mongodb.lang.Nullable;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedBookInOrder;
 import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCardListBook;
 import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPrice;
 import lombok.*;
@@ -31,7 +32,7 @@ public class Order {
 
     @Nullable
     @DBRef
-    private List<EmbeddedCardListBook> books = new ArrayList<>();
+    private List<EmbeddedBookInOrder> booksInOrder = new ArrayList<>();
 
     @NonNull
     private EmbeddedPrice subtotal;
@@ -40,7 +41,7 @@ public class Order {
 
     private String phone;
 
-    private String node;
+    private String note;
 
     private boolean status = true; // trạng thái của order
 

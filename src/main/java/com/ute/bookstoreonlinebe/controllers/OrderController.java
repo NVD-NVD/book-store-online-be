@@ -1,5 +1,6 @@
 package com.ute.bookstoreonlinebe.controllers;
 
+import com.ute.bookstoreonlinebe.dtos.card.CartDto;
 import com.ute.bookstoreonlinebe.entities.Order;
 import com.ute.bookstoreonlinebe.services.order.OrderService;
 import io.swagger.annotations.ApiOperation;
@@ -51,8 +52,8 @@ public class OrderController {
     @PreAuthorize("hasRole('MEMBER')")
     @PostMapping("/{id}")
     public ResponseEntity<Order> createNewOrder(
-            @PathVariable(value = "id") String id, Principal principal){
-        return new ResponseEntity<>(orderService.createNewOrder(id, principal), HttpStatus.OK);
+            @PathVariable(value = "id") String id, Principal principal,@RequestBody CartDto dto){
+        return new ResponseEntity<>(orderService.createNewOrder(id, principal, dto), HttpStatus.OK);
     }
 
     @ApiOperation(value = "User hủy đơn hàng(nếu đơn hàng chưa được xử lý)")

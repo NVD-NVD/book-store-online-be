@@ -2,6 +2,7 @@ package com.ute.bookstoreonlinebe.services.user;
 
 import com.ute.bookstoreonlinebe.dtos.PasswordDto;
 import com.ute.bookstoreonlinebe.dtos.book.BookInCart;
+import com.ute.bookstoreonlinebe.dtos.card.CartDetail;
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
 import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.User;
@@ -266,47 +267,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    @Override
-    public User addBookToCart(String userID, Principal principal, BookInCart bookInCart) {
-        User user = checkUserWithIDAndPrincipal(userID, principal);
-        EmbeddedCart embeddedCart = user.getCarts();
-        List<EmbeddedCardListBook> embeddedCardListBook = embeddedCart.getListBookInCart();
-        Book book = bookService.getBookById(bookInCart.getBookID());
-        if (book.getQuantity() < bookInCart.getQuantity()){
-            throw  new InvalidException(String.format("Số lượng sách có id %s không đủ.", bookInCart.getBookID()));
-        }
-        EmbeddedCardListBook cardListBook = new EmbeddedCardListBook();
-        cardListBook.setBook(book);
-        cardListBook.setQuantity(bookInCart.getQuantity());
-        cardListBook.setTotal(book.getPrice().getPrice()*bookInCart.getQuantity());
-        embeddedCardListBook.add(cardListBook);
-        embeddedCart.setListBookInCart(embeddedCardListBook);
-        user.setCarts(embeddedCart);
-        book.setBookLockNumber(book.getBookLockNumber() + bookInCart.getQuantity());
-        bookService.save(book);
-
-        return userRepository.save(user);
-    }
-
-    @Override
-    public User deleteBookInCart(String userID, Principal principal, String bookID) {
-        User user = checkUserWithIDAndPrincipal(userID,principal);
-        EmbeddedCart cart = user.getCarts();
-        List<EmbeddedCardListBook> books = cart.getListBookInCart();
-        Iterator<EmbeddedCardListBook> it = books.iterator();
-        while (it.hasNext()){
-            EmbeddedCardListBook embeddedCardListBook = it.next();
-            if (embeddedCardListBook.getBook().getId().equals(bookID)){
-                Book book = bookService.getBookById(bookID);
-                book.setBookLockNumber(book.getBookLockNumber() - embeddedCardListBook.getQuantity());
-                it.remove();
-                bookService.save(book);
-                cart.setListBookInCart(books);
-                user.setCarts(cart);
-                return userRepository.save(user);
-            }
-        }
-
-        return user;
-    }
 }

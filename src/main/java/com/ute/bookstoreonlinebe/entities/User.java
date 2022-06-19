@@ -45,7 +45,5 @@ public class User {
 
     private List<String> roles = new ArrayList<>();
 
-    private EmbeddedCart carts;
-
     private boolean enable = true;
 }

@@ -14,7 +14,7 @@ public interface OrderService {
 
     Order getOrderById(String id);
 
-    Order createNewOrder(String userID, Principal principal);
+    Order createNewOrder(String userID, Principal principal, CartDto dto);
 
     Order disableOrder(String userID, Principal principal);
 

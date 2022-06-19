@@ -52,8 +52,5 @@ public interface UserService {
 
     User save(User user);
 
-    User addBookToCart(String userID, Principal principal, BookInCart bookInCart);
-
-    User deleteBookInCart(String userID, Principal principal, String bookID);
 
 }

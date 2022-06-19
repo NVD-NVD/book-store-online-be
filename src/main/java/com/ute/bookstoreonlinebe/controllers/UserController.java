@@ -121,5 +121,4 @@ public class UserController {
             @RequestBody PasswordDto dto){
         return new ResponseEntity<>(userService.changePassword(id, principal, dto) , HttpStatus.OK);
     }
-
 }

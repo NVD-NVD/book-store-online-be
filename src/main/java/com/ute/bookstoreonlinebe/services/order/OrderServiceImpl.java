@@ -1,12 +1,16 @@
 package com.ute.bookstoreonlinebe.services.order;
 
+import com.ute.bookstoreonlinebe.dtos.card.CartDto;
+import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.entities.Order;
 import com.ute.bookstoreonlinebe.entities.User;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedBookInOrder;
 import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCardListBook;
 import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedPrice;
 import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.repositories.OrderRepository;
+import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.services.mailsender.MailSenderService;
 import com.ute.bookstoreonlinebe.services.user.UserService;
 import com.ute.bookstoreonlinebe.utils.PageUtils;
@@ -17,6 +21,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,11 +32,14 @@ public class OrderServiceImpl implements OrderService{
 
     private UserService userService;
 
+    private BookService bookService;
+
     private MailSenderService mailSenderService;
 
-    public OrderServiceImpl(OrderRepository orderRepository, UserService userService, MailSenderService mailSenderService) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserService userService, BookService bookService, MailSenderService mailSenderService) {
         this.orderRepository = orderRepository;
         this.userService = userService;
+        this.bookService = bookService;
         this.mailSenderService = mailSenderService;
     }
 
@@ -53,21 +61,30 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public Order createNewOrder(String userID, Principal principal) {
+    public Order createNewOrder(String userID, Principal principal, CartDto dto) {
         User user = userService.checkUserWithIDAndPrincipal(userID,principal);
         Order order = new Order();
         order.setUser(user);
         order.setOrderDate(new Date());
-        order.setBooks(user.getCarts().getListBookInCart());
-        order.setSubtotal(new EmbeddedPrice(0, EnumCurrency.vnd));
+        List<EmbeddedBookInOrder> listBookInOrder = new ArrayList<>();
+        dto.getCardDetail().forEach(
+                e -> {
+                    Book book = bookService.getBookById(e.getBookID());
+                    EmbeddedBookInOrder embeddedBookInOrder = new EmbeddedBookInOrder();
+                    embeddedBookInOrder.setBook(book);
+                    embeddedBookInOrder.setQuantity(e.getQuantity());
+                    embeddedBookInOrder.setTotal(book.getPrice().getPrice() * e.getQuantity());
+                    listBookInOrder.add(embeddedBookInOrder);
+                });
+        order.setBooksInOrder(listBookInOrder);
         float subTotal = 0.0F;
-        for(EmbeddedCardListBook book : user.getCarts().getListBookInCart()){
-            subTotal += book.getTotal();
+        for (EmbeddedBookInOrder embeddedBookInOrder : listBookInOrder){
+            subTotal += embeddedBookInOrder.getTotal();
         }
         order.setSubtotal(new EmbeddedPrice(subTotal, EnumCurrency.vnd));
         order.setAddress(user.getAddress());
         order.setPhone(user.getPhone());
-        order.setNode(null);
+        order.setNote("Giao hang nhanh");
         order.setStatus(true);
         order.setPay(false);
         order.setShipping(false);
