@@ -1,8 +1,10 @@
 package com.ute.bookstoreonlinebe.services.statistic;
 
 import com.ute.bookstoreonlinebe.models.Statistic;
+import com.ute.bookstoreonlinebe.models.StatisticInDay;
 
 import javax.xml.crypto.Data;
+import java.util.Date;
 
 public interface StatisticService {
 
@@ -10,7 +12,9 @@ public interface StatisticService {
 
     Statistic getTurnoverWeekPresent();
 
-    Statistic getTurnoverByDay(Data data);
+    StatisticInDay getTurnoverToDay();
 
-    Statistic getTurnoverInDay();
+    StatisticInDay getTurnoverAnyDay(int day, int month, int year);
+
+    Statistic getTurnoverAnyMonth(int month, int year);
 }

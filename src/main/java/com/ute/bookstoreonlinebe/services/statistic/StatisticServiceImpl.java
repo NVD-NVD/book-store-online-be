@@ -1,9 +1,9 @@
 package com.ute.bookstoreonlinebe.services.statistic;
 
 import com.ute.bookstoreonlinebe.entities.Order;
-import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
+import com.ute.bookstoreonlinebe.exceptions.InvalidException;
 import com.ute.bookstoreonlinebe.models.Statistic;
-import com.ute.bookstoreonlinebe.models.StatisticByDay;
+import com.ute.bookstoreonlinebe.models.StatisticInDay;
 import com.ute.bookstoreonlinebe.repositories.OrderRepository;
 import com.ute.bookstoreonlinebe.services.order.OrderService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,11 +13,12 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.WeekFields;
 import java.util.*;
 
 @Slf4j
@@ -37,48 +38,205 @@ public class StatisticServiceImpl implements StatisticService{
 
     @Override
     public Statistic getTurnoverMonPresent() {
-        System.out.println("Start of month: " + toString(startOfMonth()));
-        System.out.println("End of month: " + toString(endOfMonth()));
         Query query = new Query();
         query.addCriteria(Criteria.where("orderDate")
-                .gt(toString(startOfMonth()))
-                .lt(toString(endOfMonth()))
+                .gte(startOfMonth())
+                .lt(endOfMonth())
         );
-        List<Order> orders = mongoOperations.find(query, Order.class);
-        orders.forEach(e -> System.out.println(e.toString()));
-        return null;
+
+        List<Order> orders = mongoOperations.find( query, Order.class);
+        Map<String, List<Order>> mapOrder = mapOrder(orders);
+        Statistic statistic = new Statistic();
+        for (Map.Entry<String, List<Order>> entry : mapOrder.entrySet()){
+            StatisticInDay statisticInDay = new StatisticInDay();
+            statisticInDay.setDay(entry.getKey());
+            statisticInDay.setSumbills(entry.getValue().stream().count());
+            entry.getValue().stream().forEach(e ->{
+                 statisticInDay.setSummonny(
+                         statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                 );
+            });
+
+            List<StatisticInDay> days = statistic.getDays();
+            days.add(statisticInDay);
+            statistic.setDays(days);
+        }
+        return statistic;
     }
 
     @Override
     public Statistic getTurnoverWeekPresent() {
-        System.out.println("Start of week: " + toString(startOfWeek()));
-        System.out.println("End of week: " + toString(endOfWeek()));
         Query query = new Query();
         query.addCriteria(Criteria.where("orderDate")
-                .gt(toString(startOfWeek()))
-                .lt(toString(endOfWeek()))
+                .gt(startOfWeek())
+                .lt(endOfWeek())
         );
         List<Order> orders = mongoOperations.find(query, Order.class);
-//        List<Order> orders = orderRepository.getOrderByOrderDateToDate(
-//                "2022-06-01","2022-06-30"
-//        ).orElseThrow(() -> new NotFoundException(String.format("Không tìm thấy các order theo tuần!")));
+
+        Map<String, List<Order>> mapOrder = mapOrder(orders);
+        Statistic statistic = new Statistic();
+        for (Map.Entry<String, List<Order>> entry : mapOrder.entrySet()){
+            StatisticInDay statisticInDay = new StatisticInDay();
+            statisticInDay.setDay(entry.getKey());
+            statisticInDay.setSumbills(entry.getValue().stream().count());
+            entry.getValue().stream().forEach(e ->{
+                statisticInDay.setSummonny(
+                        statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                );
+            });
+
+            List<StatisticInDay> days = statistic.getDays();
+            days.add(statisticInDay);
+            statistic.setDays(days);
+        }
+        return statistic;
+    }
+
+    @Override
+    public StatisticInDay getTurnoverToDay() {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(startOfDay())
+                .lt(endOfDay())
+        );
+        List<Order> orders = mongoOperations.find(query, Order.class);
+        System.out.println(startOfDay());
+        StatisticInDay statisticInDay = new StatisticInDay();
+        statisticInDay.setDay(
+                startOfDay().toString().replace(
+                        startOfDay().toString().substring(startOfDay().toString().lastIndexOf("T"))
+                        , "")
+                );
+        statisticInDay.setSumbills(orders.size());
+        orders.forEach(e -> statisticInDay.setSummonny(
+                statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                )
+        );
+        return statisticInDay;
+    }
+
+    @Override
+    public StatisticInDay getTurnoverAnyDay(int day, int month, int year) {
+        if (String.valueOf(day).replace(" ", "").isEmpty()
+                || String.valueOf(month).replace(" ", "").isEmpty()
+                || String.valueOf(year).replace(" ", "").isEmpty()){
+            throw new InvalidException("Thông tin truy vấn không được null.");
+        }
+        LocalDateTime start = LocalDateTime.of(year, month, day, 0, 0, 0);
+        LocalDateTime end = LocalDateTime.of(year, month, day, 23, 59, 59);
+        System.out.println(start);
+        System.out.println(end);
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(start)
+                .lt(end)
+        );
+
+        List<Order> orders = mongoOperations.find(query, Order.class);
         orders.forEach(e -> System.out.println(e.toString()));
-        return new Statistic();
+        StatisticInDay statisticInDay = new StatisticInDay();
+        statisticInDay.setDay(year+"/"+month+"/"+day);
+        statisticInDay.setSumbills(orders.size());
+        orders.forEach(e -> statisticInDay.setSummonny(
+                        statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                )
+        );
+        return statisticInDay;
     }
 
     @Override
-    public Statistic getTurnoverByDay(Data data) {
-        return null;
+    public Statistic getTurnoverAnyMonth(int month, int year) {
+        if (String.valueOf(month).replace(" ", "").isEmpty()
+                || String.valueOf(year).replace(" ", "").isEmpty()){
+            throw new InvalidException("Thông tin truy vấn không được null.");
+        }
+        LocalDateTime start = LocalDateTime.of(year, month, 1, 0, 0, 0);
+        int day = 1;
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                day = 31;
+                break;
+            case 2:
+                day = year % 2 == 0 ? 28:29;
+                break;
+            case 4: case 6: case 9: case 11:
+                day = 29;
+                break;
+            default:
+                System.out.println("Error");
+                break;
+        }
+
+        LocalDateTime end = LocalDateTime.of(year, month, day, 23, 59, 59);
+        System.out.println(start);
+        System.out.println(end);
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(start)
+                .lt(end)
+        );
+
+        List<Order> orders = mongoOperations.find( query, Order.class);
+        Map<String, List<Order>> mapOrder = mapOrder(orders);
+        Statistic statistic = new Statistic();
+        for (Map.Entry<String, List<Order>> entry : mapOrder.entrySet()){
+            StatisticInDay statisticInDay = new StatisticInDay();
+            statisticInDay.setDay(entry.getKey());
+            statisticInDay.setSumbills(entry.getValue().stream().count());
+            entry.getValue().stream().forEach(e ->{
+                statisticInDay.setSummonny(
+                        statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                );
+            });
+
+            List<StatisticInDay> days = statistic.getDays();
+            days.add(statisticInDay);
+            statistic.setDays(days);
+        }
+        return statistic;
     }
 
-    @Override
-    public Statistic getTurnoverInDay() {
-        System.out.println("Start of day: " + toString(startOfDay()));
-        System.out.println("End of day: " + toString(endOfDay()));
-        List<Order> orders = orderRepository.getOrderByOrderDate("2022-06-01");
-
-        return null;
+    public Map<String, List<Order>> mapOrder(List<Order> orders){
+        SimpleDateFormat format = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Map<String, List<Order>> map = new HashMap<String, List<Order>>();
+        orders.forEach(e -> {
+            try {
+                Date date = format.parse(e.getOrderDate().toString());
+                String dateFormat = DateFormat.getInstance().format(date);
+                dateFormat = dateFormat.replace(
+                        dateFormat.substring(dateFormat.lastIndexOf(":") - 2), "");
+                boolean flag = false;
+                for (Map.Entry<String, List<Order>> entry : map.entrySet()){
+                    if (entry.getKey().equals(dateFormat)){
+                        entry.setValue(entry.getValue()).add(e);
+                        flag = true;
+                    }
+                }
+                if (!flag){
+                    List<Order> ord = new ArrayList<>();
+                    ord.add(e);
+                    map.put(dateFormat, ord);
+                }
+            } catch (Exception exception){
+                exception.printStackTrace();
+            }
+        });
+        return map;
     }
+
+    public Date convertFrom(LocalDateTime localDate){
+        Date date = new Date();
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+
+            date = format.parse(localDate.toString());
+
+        }catch (ParseException e){
+        }
+        return date;
+    }
+
     public static LocalDateTime startOfDay() {
         return LocalDateTime.now(DEFAULT_ZONE_ID).with(LocalTime.MIN);
     }
@@ -86,7 +244,6 @@ public class StatisticServiceImpl implements StatisticService{
     public static LocalDateTime endOfDay() {
         return LocalDateTime.now(DEFAULT_ZONE_ID).with(LocalTime.MAX);
     }
-
     public static LocalDateTime startOfWeek() {
         return LocalDateTime.now(DEFAULT_ZONE_ID)
                 .with(LocalTime.MIN)

@@ -7,8 +7,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter @Getter
-public class StatisticByDay {
-    private Date day;
-    private long sumbills;
-    private float summonny;
+public class StatisticInDay {
+    private String day;
+    private long sumbills = 0;
+    private float summonny = 0;
 }

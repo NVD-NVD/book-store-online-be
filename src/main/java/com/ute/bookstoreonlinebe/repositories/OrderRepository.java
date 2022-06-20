@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 import javax.xml.crypto.Data;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,15 +23,6 @@ public interface OrderRepository extends MongoRepository<Order, String> {
 
     @Query(value = "{'orderDate' : {$lte: {$date: ?0}}}")
     List<Order> getOrderByOrderDate(String date);
-
-//    @Query(value = "{'orderDate' : {$gt: ISODate(?0), $lt: ISODate(?1)}}" )
-//    List<Order> getOrderByOrderDateToDate(String startData, String finishDate);
-
-//    @Query(value = "{'orderDate' : {$gt: {$date : ?0}}}")
-//    Optional<List<Order>> getOrderByOrderDateToDate(String startDate, String finishDate);
-
-    @Query(value = "{'orderDate' : {$gt: {$date : ?0}, $lt: {$date: ?1}}}")
-    Optional<List<Order>> getOrderByOrderDateToDate(String startDate, String endDate);
 
     @Query(value = "{$and: [{'user': ?0}, {'status' : ?1}, {'shipping': ?2}, {'delivered' : ?3}]}")
     List<Order> getListOrderByUserIdWithIf(String id, boolean status, boolean shipping, boolean delivered);

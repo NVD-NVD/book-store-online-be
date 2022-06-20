@@ -2,6 +2,7 @@ package com.ute.bookstoreonlinebe.controllers;
 
 import com.ute.bookstoreonlinebe.entities.User;
 import com.ute.bookstoreonlinebe.models.Statistic;
+import com.ute.bookstoreonlinebe.models.StatisticInDay;
 import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.services.order.OrderService;
 import com.ute.bookstoreonlinebe.services.statistic.StatisticService;
@@ -35,16 +36,39 @@ public class StatisticController {
     public ResponseEntity<Statistic> turnoverByMon(){
         return new ResponseEntity<>(statisticService.getTurnoverMonPresent() , HttpStatus.OK);
     }
+
     @ApiOperation(value = "Admin xem danh thu trong tuần hiện tại.")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/turnover/present/week")
     public ResponseEntity<Statistic> turnoverByWeek(){
         return new ResponseEntity<>(statisticService.getTurnoverWeekPresent() , HttpStatus.OK);
     }
+
     @ApiOperation(value = "Admin xem danh thu trong ngày hiện tại.")
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping(value = "/turnover/present/day")
-    public ResponseEntity<Statistic> turnoverInday(){
-        return new ResponseEntity<>(statisticService.getTurnoverInDay() , HttpStatus.OK);
+    @GetMapping(value = "/turnover/present/today")
+    public ResponseEntity<StatisticInDay> turnoverTOday(){
+        return new ResponseEntity<>(statisticService.getTurnoverToDay() , HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Admin xem danh thu trong ngày bất kỳ.")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = "/turnover/present/anyday")
+    public ResponseEntity<StatisticInDay> turnoverAnyday(
+            @RequestParam(value = "day", required = true, defaultValue = "") int day,
+            @RequestParam(value = "month", required = true, defaultValue = "") int month,
+            @RequestParam(value = "year", required = true, defaultValue = "") int year
+    ){
+        return new ResponseEntity<>(statisticService.getTurnoverAnyDay(day, month, year) , HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Admin xem danh thu trong tháng bất kỳ.")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = "/turnover/present/anymonth")
+    public ResponseEntity<Statistic> turnoverAnyMonth(
+            @RequestParam(value = "month", required = true, defaultValue = "") int month,
+            @RequestParam(value = "year", required = true, defaultValue = "") int year
+    ){
+        return new ResponseEntity<>(statisticService.getTurnoverAnyMonth(month, year) , HttpStatus.OK);
     }
 }

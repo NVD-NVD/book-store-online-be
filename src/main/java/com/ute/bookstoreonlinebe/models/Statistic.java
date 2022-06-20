@@ -12,5 +12,5 @@ import java.util.List;
 @AllArgsConstructor
 @Getter @Setter
 public class Statistic {
-    private List<StatisticByDay> days = new ArrayList<>();
+    private List<StatisticInDay> days = new ArrayList<>();
 }
