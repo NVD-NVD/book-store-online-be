@@ -22,4 +22,6 @@ public interface CategoryRepository extends MongoRepository<Category, String> {
     @Query(value = "{'id' : { $regex: ?0, $options: 'i' } }"
             , sort = "{'enable' : -1, 'name' : 1}")
     Page<Book> getBookPaging(String search, Pageable pageable);
+
+
 }

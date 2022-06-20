@@ -1,21 +1,32 @@
 package com.ute.bookstoreonlinebe.services.statistic;
 
 import com.ute.bookstoreonlinebe.entities.Order;
+import com.ute.bookstoreonlinebe.exceptions.NotFoundException;
 import com.ute.bookstoreonlinebe.models.Statistic;
 import com.ute.bookstoreonlinebe.models.StatisticByDay;
 import com.ute.bookstoreonlinebe.repositories.OrderRepository;
 import com.ute.bookstoreonlinebe.services.order.OrderService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import javax.xml.crypto.Data;
-import java.time.LocalDate;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.WeekFields;
 import java.util.*;
 
 @Slf4j
 @Service
 public class StatisticServiceImpl implements StatisticService{
+    private static final ZoneId DEFAULT_ZONE_ID = ZoneId.of("UTC");
+    @Autowired
+    private MongoOperations mongoOperations;
+
     private OrderService orderService;
 
     private OrderRepository orderRepository;
@@ -26,41 +37,33 @@ public class StatisticServiceImpl implements StatisticService{
 
     @Override
     public Statistic getTurnoverMonPresent() {
-        LocalDate date = LocalDate.now();
-        WeekFields weekFields = WeekFields.of(Locale.getDefault());
-        System.out.println(date.get(weekFields.weekOfWeekBasedYear()));
-        System.out.println(weekFields.weekOfWeekBasedYear());
-        System.out.println(date.get(weekFields.dayOfWeek()));
-        System.out.println(weekFields.dayOfWeek());
-        List<Date> dates = new ArrayList<>();
-
+        System.out.println("Start of month: " + toString(startOfMonth()));
+        System.out.println("End of month: " + toString(endOfMonth()));
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(toString(startOfMonth()))
+                .lt(toString(endOfMonth()))
+        );
+        List<Order> orders = mongoOperations.find(query, Order.class);
+        orders.forEach(e -> System.out.println(e.toString()));
         return null;
     }
 
     @Override
     public Statistic getTurnoverWeekPresent() {
-        // get today and clear time of day
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 0); // ! clear would not reset the hour of day !
-        cal.clear(Calendar.MINUTE);
-        cal.clear(Calendar.SECOND);
-        cal.clear(Calendar.MILLISECOND);
-
-        // get start of this week in milliseconds
-        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
-        System.out.println("Start of this week:       " + cal.getTime());
-        System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
-        //System.out.println("First day of week: " + cal.get));
-
-        List<Order> order = orderRepository.getOrderByOrderDate(cal);
-
-        Statistic statistic = new Statistic();
-        List<StatisticByDay> statisticByDays = new ArrayList<>();
-        order.forEach(e -> {
-            System.out.println(e.toString());
-//            statisticByDays.add(new StatisticByDay(e.getOrderDate(), ));
-        });
-        return null;
+        System.out.println("Start of week: " + toString(startOfWeek()));
+        System.out.println("End of week: " + toString(endOfWeek()));
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(toString(startOfWeek()))
+                .lt(toString(endOfWeek()))
+        );
+        List<Order> orders = mongoOperations.find(query, Order.class);
+//        List<Order> orders = orderRepository.getOrderByOrderDateToDate(
+//                "2022-06-01","2022-06-30"
+//        ).orElseThrow(() -> new NotFoundException(String.format("Không tìm thấy các order theo tuần!")));
+        orders.forEach(e -> System.out.println(e.toString()));
+        return new Statistic();
     }
 
     @Override
@@ -70,6 +73,45 @@ public class StatisticServiceImpl implements StatisticService{
 
     @Override
     public Statistic getTurnoverInDay() {
+        System.out.println("Start of day: " + toString(startOfDay()));
+        System.out.println("End of day: " + toString(endOfDay()));
+        List<Order> orders = orderRepository.getOrderByOrderDate("2022-06-01");
+
         return null;
+    }
+    public static LocalDateTime startOfDay() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID).with(LocalTime.MIN);
+    }
+
+    public static LocalDateTime endOfDay() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID).with(LocalTime.MAX);
+    }
+
+    public static LocalDateTime startOfWeek() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID)
+                .with(LocalTime.MIN)
+                .with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+    }
+
+    //note that week ends with Sunday
+    public static LocalDateTime endOfWeek() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID)
+                .with(LocalTime.MAX)
+                .with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+    }
+    public static LocalDateTime startOfMonth() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID)
+                .with(LocalTime.MIN)
+                .with(TemporalAdjusters.firstDayOfMonth());
+    }
+
+    public static LocalDateTime endOfMonth() {
+        return LocalDateTime.now(DEFAULT_ZONE_ID)
+                .with(LocalTime.MAX)
+                .with(TemporalAdjusters.lastDayOfMonth());
+    }
+
+    public static String toString(final LocalDateTime localDateTime) {
+        return localDateTime.format(DateTimeFormatter.ISO_DATE_TIME);
     }
 }

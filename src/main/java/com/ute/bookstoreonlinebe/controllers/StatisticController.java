@@ -35,6 +35,12 @@ public class StatisticController {
     public ResponseEntity<Statistic> turnoverByMon(){
         return new ResponseEntity<>(statisticService.getTurnoverMonPresent() , HttpStatus.OK);
     }
+    @ApiOperation(value = "Admin xem danh thu trong tuần hiện tại.")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = "/turnover/present/week")
+    public ResponseEntity<Statistic> turnoverByWeek(){
+        return new ResponseEntity<>(statisticService.getTurnoverWeekPresent() , HttpStatus.OK);
+    }
     @ApiOperation(value = "Admin xem danh thu trong ngày hiện tại.")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/turnover/present/day")
