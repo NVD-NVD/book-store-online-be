@@ -55,9 +55,9 @@ public class StatisticController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/turnover/present/anyday")
     public ResponseEntity<StatisticInDay> turnoverAnyday(
-            @RequestParam(value = "day", required = true, defaultValue = "") int day,
-            @RequestParam(value = "month", required = true, defaultValue = "") int month,
-            @RequestParam(value = "year", required = true, defaultValue = "") int year
+            @RequestParam(value = "day", required = true, defaultValue = "1") int day,
+            @RequestParam(value = "month", required = true, defaultValue = "6") int month,
+            @RequestParam(value = "year", required = true, defaultValue = "2022") int year
     ){
         return new ResponseEntity<>(statisticService.getTurnoverAnyDay(day, month, year) , HttpStatus.OK);
     }
@@ -66,8 +66,8 @@ public class StatisticController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/turnover/present/anymonth")
     public ResponseEntity<Statistic> turnoverAnyMonth(
-            @RequestParam(value = "month", required = true, defaultValue = "") int month,
-            @RequestParam(value = "year", required = true, defaultValue = "") int year
+            @RequestParam(value = "month", required = true, defaultValue = "6") int month,
+            @RequestParam(value = "year", required = true, defaultValue = "2022") int year
     ){
         return new ResponseEntity<>(statisticService.getTurnoverAnyMonth(month, year) , HttpStatus.OK);
     }

@@ -73,7 +73,7 @@ public class UserController {
             @RequestParam(name = "page", required = false, defaultValue = "${paging.default.page}") int page,
             @RequestParam(name = "size", required = false, defaultValue = "${paging.default.size}") int size,
             @RequestParam(name = "sort", required = false, defaultValue = "asc") String sort,
-            @RequestParam(name = "column", required = false, defaultValue = "") String column) {
+            @RequestParam(name = "column", required = false, defaultValue = "id") String column) {
         return new ResponseEntity<>(userService.getUserPaging(search, page, size, sort, column), HttpStatus.OK);
     }
 
