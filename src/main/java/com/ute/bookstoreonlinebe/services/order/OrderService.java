@@ -3,6 +3,7 @@ package com.ute.bookstoreonlinebe.services.order;
 import com.ute.bookstoreonlinebe.dtos.card.CartDto;
 import com.ute.bookstoreonlinebe.entities.Order;
 import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.aggregation.BooleanOperators;
 
 import java.security.Principal;
 import java.util.List;
@@ -32,4 +33,8 @@ public interface OrderService {
     List<Order> getListOrderByUserIdWithIf(String id, int status);
 
     List<Order> getOrderSuccessByUserId(String id);
+
+    Order getOrderByIdForPayment(String id);
+
+    Order save(Order order);
 }

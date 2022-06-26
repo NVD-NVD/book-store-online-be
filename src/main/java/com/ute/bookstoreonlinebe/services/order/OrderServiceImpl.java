@@ -177,4 +177,14 @@ public class OrderServiceImpl implements OrderService{
     public List<Order> getOrderSuccessByUserId(String id) {
         return orderRepository.getListOrderByUserIdWithIf(id, true, true, true);
     }
+
+    @Override
+    public Order getOrderByIdForPayment(String id) {
+        return orderRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Order save(Order order) {
+        return orderRepository.save(order);
+    }
 }
