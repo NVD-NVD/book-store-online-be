@@ -4,11 +4,9 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://mongo-user:O2O0ONnVKME6Ndp4@cluster0.ipjdu.mongodb.net/?retryWrites=true&w=majority
-#      uri: mongodb+srv://zerodev:Dt542812!@cluster0.ipjdu.mongodb.net/?retryWrites=true&w=majority
 #      host: localhost
 #      port: 27017
       database: book-store-database
-      #O2O0ONnVKME6Ndp4
 
   profiles:
     active: ${ACTIVE_PROFILE:dev}

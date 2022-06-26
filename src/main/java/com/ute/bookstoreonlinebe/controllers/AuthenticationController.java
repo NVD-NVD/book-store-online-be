@@ -20,6 +20,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,6 +42,9 @@ public class AuthenticationController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Value("${google.verifyUrl}")
     private String googleVerifyUrl;
@@ -73,6 +77,7 @@ public class AuthenticationController {
         UserAuthenticationToken authenticationToken = new UserAuthenticationToken(
                 dto.getEmail(),
                 dto.getPassword(),
+//                passwordEncoder.encode(dto.getPassword()),
                 true
         );
         try {
