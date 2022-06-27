@@ -60,11 +60,17 @@ public class OrderController {
         return new ResponseEntity<>(orderService.getOrderSuccessByUserId(id), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Get list order by userId, với status = true, delivered = false")
+    @ApiOperation(value = "Get list order by userId và statusId" +
+            "\n(Với statusId là 1 2 3 4 tương đương: \n" +
+            "1 = Chưa xác nhận ;\n" +
+            "2 = Đã xác nhận ;\n" +
+            "3 = Hoàn thành ; \n" +
+            "4 = Hủy)")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
-    @GetMapping("/{id}/{status}")
+    @GetMapping
     public ResponseEntity<List<Order>> getOrderByUserIDAndStatus(
-            @PathVariable(value = "id") String id, @PathVariable(value = "status") int status){
+            @RequestParam(value = "userId", required = true) String id,
+            @RequestParam(value = "statusId", required = true) int status){
         return new ResponseEntity<>(orderService.getListOrderByUserIdWithIf(id, status), HttpStatus.OK);
     }
 
