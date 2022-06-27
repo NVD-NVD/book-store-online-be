@@ -154,9 +154,11 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getListOrderByUserIdWithIf(String id, int status, Principal principal) {
         User user = userService.getUser(principal);
         if (!user.getRoles().stream().anyMatch(a -> a.equalsIgnoreCase("ROLE_ADMIN"))) {
+
             if (!id.equals(user.getId())) {
                 throw new InvalidException(String.format("Token không đến từ người dùng có id %s", id));
             }
+            
         }
 
         switch (status) {
