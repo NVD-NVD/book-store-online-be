@@ -52,6 +52,7 @@ public class OrderController {
             @PathVariable(value = "id") String id){
         return new ResponseEntity<>(orderService.getOrderByUserId(id), HttpStatus.OK);
     }
+
     @ApiOperation(value = "Get list order success by userId")
     @PreAuthorize("hasAnyRole('ADMIN','MEMBER')")
     @GetMapping("/success/{id}")
@@ -70,8 +71,9 @@ public class OrderController {
     @GetMapping
     public ResponseEntity<List<Order>> getOrderByUserIDAndStatus(
             @RequestParam(value = "userId", required = true) String id,
-            @RequestParam(value = "statusId", required = true) int status){
-        return new ResponseEntity<>(orderService.getListOrderByUserIdWithIf(id, status), HttpStatus.OK);
+            @RequestParam(value = "statusId", required = true) int status,
+            Principal principal){
+        return new ResponseEntity<>(orderService.getListOrderByUserIdWithIf(id, status, principal), HttpStatus.OK);
     }
 
     @ApiOperation(value = "User tạo đơn đặt hàng")

@@ -27,7 +27,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
 
     private UserService userService;
@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Page<Order> getOrderPaging(String search, int page, int size, String sort, String column) {
-        Pageable pageable = PageUtils.createPageable(page,size,sort,column);
+        Pageable pageable = PageUtils.createPageable(page, size, sort, column);
         return orderRepository.getOrderPaging(search, pageable);
     }
 
@@ -68,7 +68,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Order createNewOrder(String userID, Principal principal, CartDto dto) {
-        User user = userService.checkUserWithIDAndPrincipal(userID,principal);
+        User user = userService.checkUserWithIDAndPrincipal(userID, principal);
         Order order = new Order();
         order.setUser(user);
         order.setOrderDate(new Date());
@@ -85,7 +85,7 @@ public class OrderServiceImpl implements OrderService{
                 });
         order.setBooksInOrder(listBookInOrder);
         float subTotal = 0.0F;
-        for (EmbeddedBookInOrder embeddedBookInOrder : listBookInOrder){
+        for (EmbeddedBookInOrder embeddedBookInOrder : listBookInOrder) {
             subTotal += embeddedBookInOrder.getTotal();
         }
         order.setSubtotal(new EmbeddedPrice(subTotal, EnumCurrency.vnd));
@@ -108,15 +108,13 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Order callOffOrder(String userID, String orderID, Principal principal) {
-        User user = userService.checkUserWithIDAndPrincipal(userID,principal);
+        User user = userService.checkUserWithIDAndPrincipal(userID, principal);
         Order order = getOrderById(orderID);
-        if (!order.getUser().getId().equals(user.getId()))
-        {
+        if (!order.getUser().getId().equals(user.getId())) {
             throw new InvalidException(
-                    String.format("Order có id %s không thuộc về user có id %s",orderID, userID));
+                    String.format("Order có id %s không thuộc về user có id %s", orderID, userID));
         }
-        if (order.isStatus() && order.isShipping())
-        {
+        if (order.isStatus() && order.isShipping()) {
             throw new InvalidException(
                     String.format("Không thể huy đơn hàng có id %s, vì đơn hàng đã được giao.", orderID));
         }
@@ -153,8 +151,15 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public List<Order> getListOrderByUserIdWithIf(String id, int status) {
-        switch (status){
+    public List<Order> getListOrderByUserIdWithIf(String id, int status, Principal principal) {
+        User user = userService.getUser(principal);
+        if (!user.getRoles().stream().anyMatch(a -> a.equalsIgnoreCase("ROLE_ADMIN"))) {
+            if (!id.equals(user.getId())) {
+                throw new InvalidException(String.format("Token không đến từ người dùng có id %s", id));
+            }
+        }
+
+        switch (status) {
             case 1:
                 // status = true, shipping = false
                 return orderRepository.getListOrderByUserIdWithIf(id, true, false, false);
