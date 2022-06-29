@@ -56,4 +56,7 @@ logging:
       max-history: 7
 
 server:
+  error:
+    include-exception: true
+    include-message: always
   port: 8080
