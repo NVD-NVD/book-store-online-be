@@ -71,4 +71,12 @@ public class StatisticController {
     ){
         return new ResponseEntity<>(statisticService.getTurnoverAnyMonth(month, year) , HttpStatus.OK);
     }
+
+    @ApiOperation(value = "Admin xem danh thu trong 7 ngay gan nhat.")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = "/turnover/present/sevenday")
+    public ResponseEntity<Statistic> turnoverInSevenDay(
+    ){
+        return new ResponseEntity<>(statisticService.getTurnoverInSevenDay() , HttpStatus.OK);
+    }
 }

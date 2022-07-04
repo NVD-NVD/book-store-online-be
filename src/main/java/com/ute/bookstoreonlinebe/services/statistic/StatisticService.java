@@ -17,4 +17,6 @@ public interface StatisticService {
     StatisticInDay getTurnoverAnyDay(int day, int month, int year);
 
     Statistic getTurnoverAnyMonth(int month, int year);
+
+    Statistic getTurnoverInSevenDay();
 }

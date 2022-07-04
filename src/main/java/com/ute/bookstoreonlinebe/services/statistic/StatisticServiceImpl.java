@@ -196,6 +196,36 @@ public class StatisticServiceImpl implements StatisticService{
         return statistic;
     }
 
+    @Override
+    public Statistic getTurnoverInSevenDay() {
+        System.out.println("day: " + toString(endOfDay()));
+        System.out.println("seven days ago: " + toString(startOfDay().minusDays(7)));
+        Query query = new Query();
+        query.addCriteria(Criteria.where("orderDate")
+                .gt(startOfDay().minusDays(7))
+                .lt(endOfDay())
+        );
+        List<Order> orders = mongoOperations.find(query, Order.class);
+
+        Map<String, List<Order>> mapOrder = mapOrder(orders);
+        Statistic statistic = new Statistic();
+        for (Map.Entry<String, List<Order>> entry : mapOrder.entrySet()){
+            StatisticInDay statisticInDay = new StatisticInDay();
+            statisticInDay.setDay(entry.getKey());
+            statisticInDay.setSumbills(entry.getValue().stream().count());
+            entry.getValue().stream().forEach(e ->{
+                statisticInDay.setSummonny(
+                        statisticInDay.getSummonny() + e.getSubtotal().getPrice()
+                );
+            });
+
+            List<StatisticInDay> days = statistic.getDays();
+            days.add(statisticInDay);
+            statistic.setDays(days);
+        }
+        return statistic;
+    }
+
     public Map<String, List<Order>> mapOrder(List<Order> orders){
         SimpleDateFormat format = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
