@@ -3,21 +3,20 @@ package com.ute.bookstoreonlinebe.services.mailsender;
 import com.ute.bookstoreonlinebe.entities.Order;
 import com.ute.bookstoreonlinebe.entities.User;
 import com.ute.bookstoreonlinebe.models.EmailDetails;
+import freemarker.template.TemplateException;
+
+import javax.mail.MessagingException;
+import java.io.IOException;
 
 public interface MailSenderService {
-    // To send a simple email
-    String sendSimpleMail(EmailDetails details);
 
-    String sendSignup(User user);
+    void sendMailSignup(User user);
 
-    String sendNewOrder(User user, Order order);
+    void sendMailNewOrder(User user, Order order);
 
-    String sendCallOffOrder(User user, String orderID);
+    void sendMailCallOffOrder(User user, Order order);
 
-    String sendChangePassword(User user);
+    void sendMailChangePassword(User user);
 
-    String sendForgotPassword(User user);
-
-    // To send an email with attachment
-    String sendMailWithAttachment(EmailDetails details);
+    void sendMailForgotPassword(User user);
 }

@@ -84,7 +84,7 @@ public class BookController {
         return new ResponseEntity<>(bookService.addImageBook(id,  files), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Admin thêm hình ảnh cho book")
+    @ApiOperation(value = "Admin xóa hình ảnh cho book")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/image/{id}/{name}")
     public ResponseEntity<Book> deleteImageBook(

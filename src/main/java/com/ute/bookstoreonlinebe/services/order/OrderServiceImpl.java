@@ -97,7 +97,7 @@ public class OrderServiceImpl implements OrderService {
         order.setShipping(false);
         order.setDelivered(false);
         orderRepository.save(order);
-        mailSenderService.sendNewOrder(user, order);
+        mailSenderService.sendMailNewOrder(user, order);
         return order;
     }
 
@@ -120,7 +120,7 @@ public class OrderServiceImpl implements OrderService {
         }
         order.setStatus(false);
         orderRepository.save(order);
-        mailSenderService.sendCallOffOrder(user, order.getId());
+        mailSenderService.sendMailCallOffOrder(user, order);
         return order;
     }
 

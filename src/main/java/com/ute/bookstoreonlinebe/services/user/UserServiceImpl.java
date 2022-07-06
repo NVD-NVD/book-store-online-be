@@ -121,7 +121,7 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Collections.singletonList(EnumRole.ROLE_MEMBER.name()));
         userRepository.save(user);
 
-        mailSenderService.sendSignup(user);
+        mailSenderService.sendMailSignup(user);
         return user;
     }
 
