@@ -55,6 +55,6 @@ public class DataSeedingListerner implements CommandLineRunner {
             userService.createAdmin(userDto);
 
         }
-        
+
     }
 }
