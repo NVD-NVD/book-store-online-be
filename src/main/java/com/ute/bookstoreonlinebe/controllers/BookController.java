@@ -5,6 +5,7 @@ import com.ute.bookstoreonlinebe.entities.Book;
 import com.ute.bookstoreonlinebe.services.book.BookService;
 import com.ute.bookstoreonlinebe.services.file.FilesStorageService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
