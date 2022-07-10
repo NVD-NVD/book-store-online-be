@@ -1,10 +1,15 @@
 package com.ute.bookstoreonlinebe.config;
 
 import com.ute.bookstoreonlinebe.dtos.user.UserDto;
+import com.ute.bookstoreonlinebe.entities.Book;
+import com.ute.bookstoreonlinebe.entities.Category;
 import com.ute.bookstoreonlinebe.entities.Order;
 import com.ute.bookstoreonlinebe.entities.User;
+import com.ute.bookstoreonlinebe.entities.embedded.EmbeddedCategory;
 import com.ute.bookstoreonlinebe.models.Statistic;
 import com.ute.bookstoreonlinebe.repositories.UserRepository;
+import com.ute.bookstoreonlinebe.services.book.BookService;
+import com.ute.bookstoreonlinebe.services.category.CategoryService;
 import com.ute.bookstoreonlinebe.services.mailsender.MailSenderService;
 import com.ute.bookstoreonlinebe.services.order.OrderService;
 import com.ute.bookstoreonlinebe.services.statistic.StatisticService;
@@ -19,6 +24,8 @@ import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 @Profile("dev")
@@ -41,6 +48,12 @@ public class DataSeedingListerner implements CommandLineRunner {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private BookService bookService;
+
+    @Autowired
+    private CategoryService categoryService;
+
     @Value("${default.password}")
     private String defaultPassword;
 
@@ -55,6 +68,5 @@ public class DataSeedingListerner implements CommandLineRunner {
             userService.createAdmin(userDto);
 
         }
-
     }
 }

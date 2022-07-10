@@ -20,7 +20,7 @@
             </div>
 
             <br>
-            <p>Cam ơn ban da dang ky tai khoan tren he thong cua chung toi.
+            <p>Cam on ban da dang ky tai khoan tren he thong cua chung toi.
                 <br>
                 Hay truy cap vao <a href="#">Trang chu</a>, de xem nhung tua sach moi nhat
             </p>
